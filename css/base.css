@@ -1,0 +1,42 @@
+body {background-color:#f8f8f8; }
+#map-canvas {width:100%;height:100%;display:none;}
+
+/* Wrappers */
+
+#wrapper {width:100%;background:#333;height:100%;overflow:hidden; min-width: 320px;}
+#page-wrapper {padding:0 5px 5px;height:100%;background-color:#fff; border-bottom: 5px solid #fff;}
+
+@media(min-width:768px) {
+	#page-wrapper {position:inherit;background:#f0ede5;margin:0 0 0 200px;padding:0;border-top:5px solid #fff;border-left:5px solid #fff;}
+}
+
+@media(max-width:1199px) {
+	#page-wrapper {margin-left:0px;}
+	.sidebar-collapse {display:none;}
+}
+
+#sidebar {display:block;position:relative;width:100%;margin:0;background:#eee;float:left;padding:50px 0 20px;}
+.hideSide {display:none;top:9px;right:0;position:absolute;cursor:pointer;}
+.hideSide:hover {color: #d03233;}
+
+@media(min-width:1199px) {
+	#map-canvas {display:block;}
+	#sidebar  {width: 500px;margin-left:0px;border-right:5px solid #fff;}
+	.hideSide {display:block;}
+}
+@media(max-width:1199px) {
+	#map-canvas {display:block;border-right:5px solid #fff;}
+	#sidebar  {width:500px;margin-left:0px;border-right:5px solid #fff;}
+	.hideSide {display:block;}
+}
+@media(max-width:800px) {
+	#map-canvas {display:none;border-right: 0px!important;border-top: 5px solid #fff;}
+	#sidebar  {width:100%;margin:5px 0 0 0px;border-right:0px solid #fff; }
+	.hideSide {display:none;}
+	.mapLink {display:block!important;}
+	.settings, .reports {display: none!important;}
+}
+#side-menu {height:100%;}
+.sideMenu {background: #ccc;position: absolute;top:0;width:100%;height:40px;}
+
+.showMap {display:block!important; width:100%!important}

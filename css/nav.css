@@ -1,0 +1,41 @@
+/* Navigation */
+/* Top Right Navigation Dropdown Styles */
+.navbar-default {border:0!important;}
+.navbar-top-links li {display:inline-block;}
+.navbar-top-links li a {padding:15px 10px;min-height:50px;}
+.dropdown-toggle {width: 70px;}
+.navbar-top-links .dropdown-menu li {display:block;}
+.navbar-top-links .dropdown-menu li:last-child {margin-right:0;}
+.navbar-top-links .dropdown-menu li a {padding:10px 10px;min-height:0; border-bottom: 1px solid #eee;}
+.navbar-top-links .dropdown-menu li:last-child a { border-bottom: 0px solid #eee;}
+.navbar-top-links .dropdown-menu li a div {white-space:normal;}
+.navbar-top-links .dropdown-messages,.navbar-top-links .dropdown-tasks,.navbar-top-links .dropdown-alerts {width:400px;min-width:0;}
+.navbar-top-links .dropdown-messages {margin-left:5px;}
+.navbar-top-links .dropdown-tasks {margin-left:-59px;}
+.navbar-top-links .dropdown-alerts {margin-left:-213px;}
+.navbar-top-links .dropdown-user {right: 0;left:auto;}
+.navbar-right {float:right;}
+#side-menu > li > a:hover, #side-menu > li > a:focus {color:#fff!important; background: #3d3d3d;}
+.navSelected {color:#fff!important; background: url("../images/sidebar-menu-arrow.png") no-repeat right #000!important;}
+#side-menu > li > a i {font-size: 18px!important;}
+
+/* Sidebar Menu Styles */
+.navbar-static-side {border-top:5px solid #fff!important;background:#333;}
+.navbar-header {width:50px;float:left;margin-left:20px;}
+#side-menu li {border-bottom:1px solid #666;}
+
+@media(min-width:768px) {
+    .navbar-static-side {z-index:100;position:absolute;width:200px;}
+    .navbar-top-links .dropdown-messages,.navbar-top-links .dropdown-tasks,.navbar-top-links .dropdown-alerts {margin-left:auto;}
+}
+
+#slideDiv {padding: 0px 25px 15px 15px;display:block;}
+
+@media(max-width:800px) {
+	.dropdown-alerts {right: -74px!important;left: auto;}
+}
+
+@media(max-width:500px) {
+	.dropdown-alerts li a div .fa {display:none;}
+}
+

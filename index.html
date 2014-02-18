@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>V3 Mockup</title>
+
+		<!-- Core CSS - Include with every page -->
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+		<!-- SB Admin CSS - Include with every page -->
+		<link href="css/styles.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfGnqBjOP6w0P5iAp-Liz9jpHbvqZ-daM&sensor=false"></script>
+		<script src="js/map.js"></script>
+		<script src="js/layout.js"></script>
+		<script src="js/nav.js"></script>
+
+		<script src="js/modernizr.custom.js"></script>
+
+		<!-- Core Scripts - Include with every page -->
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!--<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+		<script src="js/sb-admin.js"></script>-->
+		<script src="js/classie.js"></script>
+		<script type="text/javascript" src="js/jquery.slimscroll.js"></script>
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+				<div class="navbar-header">
+					<div id="logo"><img src="images/logo.png" alt="Fleetsmart" /></div>
+					<div id="Moblogo"><img src="images/mobLogo.png" class="Moblogo" alt="Fleetsmart" /></div>
+					<button class="fa fa-bars" id="showLeftPush"></button>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</div>
+				<!-- /.navbar-header -->
+				<ul class="nav navbar-top-links navbar-right">
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-bell fa-fw"><span class="alertNum">12</span></i>  <i class="fa fa-caret-down"></i></a>
+						<ul class="dropdown-menu dropdown-alerts">
+							<li><a href="#"><div><i class="fa fa-pause fa-fw"></i> KY59XJZ: Idle for 35 mins<span class="pull-right text-muted small">06:07</span></div></a></li>
+							<li><a href="#"><div><i class="fa fa-clock-o fa-fw"></i> 24: Vehicle stopped OOH.<span class="pull-right text-muted small">06:07</span></div></a></li>
+							<li><a href="#"><div><i class="fa fa-home fa-fw"></i>   YB61ZPV: Left John Huggins Home<span class="pull-right text-muted small">06:15</span></div></a></li>
+							<li><a href="#"><div><i class="fa fa-tachometer fa-fw"></i>   WJ10HGX: 85mph (Lim: 70mph) 2 mins<span class="pull-right text-muted small">06:15</span></div></a></li>
+							<li><a class="text-center" href="#"><strong>See All Alerts</strong><i class="fa fa-angle-right"></i></a></li>
+						</ul>
+						<!-- /.dropdown-alerts -->
+					</li>
+					<!-- /.dropdown -->
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i></a>
+						<ul class="dropdown-menu dropdown-user">
+						    <li><a href="#"><i class="fa fa-user fa-fw"></i> Users</a></li>
+							<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
+							<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+						</ul>
+						<!-- /.dropdown-user -->
+					</li>
+					<!-- /.dropdown -->
+				</ul>
+				<!-- /.navbar-top-links -->
+			</nav>
+			<!-- /.navbar-static-top -->
+		   <nav class="navbar-static-side" id="cbp-spmenu-s1">
+					<ul class="nav" id="side-menu">
+						<li class="mapLink"><a href="#"><i class="fa fa-map-marker fa-fw"></i> Map</a></li>
+						<li><a href="#" class="navSelected"><i class="fa fa-truck fa-fw"></i> Vehicles</a></li>
+						<li><a href="#"><i class="fa fa-thumb-tack fa-fw"></i> POI</a></li>
+						<li><a href="#"><i class="fa fa-play-circle fa-fw"></i> Replay</a></li>
+						<li><a href="#"  class="reports fullWidth"><i class="fa fa-file fa-fw"></i> Reporting</a></li>
+						<li><a href="#" class="settings fullWidth"><i class="fa fa-wrench fa-fw"></i> Settings</a></li>
+					</ul>
+			</nav>
+			<div id="page-wrapper">
+				<div id="sidebar">
+					<div class="sideMenu">
+						<span class="hideSide fa fa-times fa-fw"></span>
+					</div>
+					<div id="slideDiv">
+
+      				</div>
+				</div>
+				<div id="map-canvas"></div>
+			</div>
+			<!-- /#page-wrapper -->
+		</div>
+		<!-- /#wrapper -->
+	</body>
+</html>

@@ -1,0 +1,25 @@
+
+#logo {border-right:5px solid #fff;text-align:center;padding:16px 0 0;background:#d03233;display:none;display:none;width:205px;left:0;position:absolute;height:100%;}
+#logo img {width:180px;}
+#Moblogo {position:absolute;top:8px;left:90px;}
+.Moblogo {width:35px;}
+
+#showLeftPush {display:block;position:absolute;left:-5px;top:0;width:80px;height:100%;background:#D03233;padding:0;border:0;border-left:5px solid #fff;border-right:5px solid #fff;color:#fff;font-size: 30px;}
+#showLeftPush.active {left:0;}
+.mapLink {display:none!important;}
+
+.alertNum {position:absolute;background:#d03233;border-radius:50%;display:block;padding:5px;font-size:12px;top:20px;right:19px;}
+.open .alertNum {color:#fff!important;}
+.dropdown:hover .alertNum, .dropdown:active .alertNum, .dropdown a:focus .alertNum {color:#fff!important;}
+
+@media(min-width:1199px) {
+	#logo {display:block;}
+	#Moblogo {display:none!important;}
+}
+@media(max-width:1199px) {
+	#logo {display:none;}
+}
+@media(max-width:800px) {
+	#logo {display:none;}
+	.mapLink {display:block!important;}
+}
