@@ -29,10 +29,10 @@
     .navbar-top-links .dropdown-messages,.navbar-top-links .dropdown-tasks,.navbar-top-links .dropdown-alerts {margin-left:auto;}
 }
 
-#slideDiv {padding: 0px 25px 15px 15px;display:block;}
+#slideDiv {padding:0;display:block;}
 
 @media(max-width:800px) {
-	.dropdown-alerts {right: -74px!important;left: auto;}
+	.dropdown-alerts {right: -74px!important;left: auto; min-width: 330px!important;}
 }
 
 @media(max-width:500px) {

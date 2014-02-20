@@ -1,0 +1,53 @@
+
+.viewSwitcher {list-style: none; width:100%;dislay:block;padding:0;margin:0;}
+.viewSwitcher li {display:block;float:left;width: 33.333%;display:block;}
+.viewSwitcher li a {width: 100%;display:block;background:#ccc;text-align:center;padding: 15px 0;border-right: 1px solid #fff;}
+.viewSwitcher li a:hover, .viewSwitcher li a.active {background:#f8f8f8;color:#D03233;}
+.viewSwitcher li:last-child a {border-right: 0;}
+.viewSwitcher li a .fa {font-size: 28px!important;}
+
+#vehicles {clear:both;list-style:none;padding:0;border-top:1px solid #fff;margin-bottom:0;}
+#vehicles li {display:block;padding:15px 5px 10px;border-bottom:1px solid #fff;transition: opacity .25s ease-in-out;-moz-transition: opacity .25s ease-in-out;-webkit-transition: opacity .25s ease-in-out;}
+#vehicles li:hover {background:#f8f8f8;}
+
+.vehicleListSmall .Vtitle {font-weight: bold; display:block;font-size: 13px; }
+.vehicleListSmall  .col1, .vehicleListSmall  .col2 {float:left; margin: 0 0 10px 0;padding: 0 5px;}
+.vehicleListSmall  .col1 {width: 55%;}
+.vehicleListSmall  .col2 {width: 45%;}
+.vehicleListSmall li img {float:left; margin: 0 15px 0 10px;}
+.vehicleListSmall  .Vposition {font-size:12px;display:block;height:20px; overflow:hidden;margin-top:3px;}
+.vehicleListSmall  .Vtime, .vehicleListSmall .Vspeed  {display:block;float:left;width: 40%; text-align: center;font-weight:bold; font-size: 13px;}
+.vehicleListSmall  .Vspeed {margin-left: 10px; width: 50%;}
+.vehicleListSmall  .Vtime span, .vehicleListSmall .Vspeed span {font-size: 12px; font-weight: normal; display:block; margin-top:3px;}
+
+.vehicleListMed .Vtitle {font-weight: bold; display:block;font-size: 13px; margin-bottom: 10px; }
+.vehicleListMed  .col1, .vehicleListMed  .col2 {display:block;float:left;}
+.vehicleListMed  .col1 {background:#fff;border-radius:3px;width:40%; padding:10px;text-align:center;margin-bottom:15px; margin-right:10px;}
+.vehicleListMed  .col2 {width: 55%;}
+.vehicleListMed li .img {margin:15px 0;}
+.vehicleListMed  .Vposition {}
+.vehicleListMed  .Vposition, .vehicleListMed .VMOT, .vehicleListMed .Vdriver  {padding-left: 20px; font-size: 12px;display:block; width:100%; font-size: 12px;}
+.vehicleListMed  .Vspeed, .vehicleListMed  .Vtime {border-top: 1px solid #eee;padding-top:10px;padding-bottom:5px;font-weight:bold;color:#84b72b; font-size: 12px;display:block; width:100%; font-size: 12px;}
+.vehicleListMed .Vspeed span {border-left: 1px solid #ccc; margin-left: 5px;  padding-left: 5px;font-weight:normal;color:#333;}
+.vehicleListMed .VMOT {background: url("../images/MOT.png") no-repeat;}
+.vehicleListMed .Vdriver {background: url("../images/user.png") no-repeat;}
+.vehicleListMed .Vposition {background: url("../images/Map.png") no-repeat;}
+
+.vehicleListMed .vButton {background: #ccc;border-radius:5px;display:block;width: 45px; height: 45px;float:left; margin: 5px 5px 0 0;}
+.vehicleListMed .vButton:hover {background: #d8d7d7;}
+
+#vehicles  .Vgraph {clear:both;position:relative; border: 2px solid #000;max-width:500px;display: block; width: 100%; background: #333; overflow: hidden; height:12px;margin: 15px auto 0;}
+#vehicles  .Vgraph img {width: 100%; position:absolute; top:0; left: 0;}
+
+@media(min-width:500px) {
+	.vehicleListMed  .col2 {position:relative;}
+	.vehicleListMed .vButton {width: 55px; height: 55px;float:left; margin: 10px 5px 0 0;}	
+}
+
+@media(max-width:800px) {
+	.viewSwitcher {display:none;}
+}
+@media(max-width:370px) {
+	.vehicleListSmall li .img {display:none;}
+}
+

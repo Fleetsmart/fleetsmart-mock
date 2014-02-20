@@ -18,7 +18,7 @@
 		<script src="js/map.js"></script>
 		<script src="js/layout.js"></script>
 		<script src="js/nav.js"></script>
-
+		<script src="js/tabs.js"></script>
 		<script src="js/modernizr.custom.js"></script>
 
 		<!-- Core Scripts - Include with every page -->
@@ -27,9 +27,7 @@
 		<!--<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
 		<script src="js/sb-admin.js"></script>-->
 		<script src="js/classie.js"></script>
-		<script type="text/javascript" src="js/jquery.slimscroll.js"></script>
 	</head>
-
 	<body>
 		<div id="wrapper">
 			<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -84,8 +82,82 @@
 					<div class="sideMenu">
 						<span class="hideSide fa fa-times fa-fw"></span>
 					</div>
+					<ul class="viewSwitcher tabs">
+						<li><a href="#tab1" id="vehicleSmall" class="selected"><span class="fa fa-th-list"></span></a></li>
+						<li><a href="#tab2" id="vehicleMed"><span class="fa fa-th"></span></a></li>
+						<li><a href="" id="vehicleLarge"><span class="fa fa-th-large"></span></a></li>
+					</ul>
 					<div id="slideDiv">
-
+						<div id="tab1">
+							<ul id="vehicles" class="vehicleListSmall">
+								<li>
+									<div class="col1">
+										<img src="images/car.png" class="img" alt="" />
+										<span class="Vtitle">356307042782838</span>
+										<span class="Vposition">191 205 Bolton Rd, Wigan</span>
+									</div>
+									<div class="col2">
+										<span class="Vtime">Today <span>11:53</span></span>
+										<span class="Vspeed">In Transit <span>32 mph</span></span>
+									</div>
+									<div class="Vgraph"><img src="images/graph.jpg" /><img src="images/journey.png" /></div>
+								</li>
+								<li>
+									<div class="col1">
+										<img src="images/car.png" class="img" alt="" />
+										<span class="Vtitle">356307042782838</span>
+										<span class="Vposition">191 205 Bolton Rd, Wigan</span>
+									</div>
+									<div class="col2">
+										<span class="Vtime">Today <span>11:53</span></span>
+										<span class="Vspeed">In Transit <span>32 mph</span></span>
+									</div>
+									<div class="Vgraph"><img src="images/graph.jpg" /><img src="images/journey.png" /></div>
+								</li>
+							</ul>
+						</div>
+						<div id="tab2">
+							<ul id="vehicles" class="vehicleListMed">
+								<li>
+									<div class="col1">
+										<img src="images/car.png" class="img" alt="" />
+										<span class="Vspeed">In Transit <span>32 mph</span></span>
+										<span class="Vtime">Today <span>11:53</span></span>
+									</div>
+									<div class="col2">
+										<span class="Vtitle">356307042782838</span>
+										<span class="Vposition">191 205 Bolton Rd, Wigan</span>
+										<span class="Vdriver">Stephen Tyson</span>
+										<span class="VMOT">MOT Date</span>
+										<div class="clear"></div>
+										<a href="" class="vButton"></a>
+										<a href="" class="vButton"></a>
+										<a href="" class="vButton"></a>
+										<a href="" class="vButton"></a>
+									</div>
+									<div class="Vgraph"><img src="images/graph.jpg" /><img src="images/journey.png" /></div>
+								</li>
+								<li>
+									<div class="col1">
+										<img src="images/car.png" class="img" alt="" />
+										<span class="Vspeed">In Transit <span>32 mph</span></span>
+										<span class="Vtime">Today <span>11:53</span></span>
+									</div>
+									<div class="col2">
+										<span class="Vtitle">356307042782838</span>
+										<span class="Vposition">191 205 Bolton Rd, Wigan</span>
+										<span class="Vdriver">Stephen Tyson</span>
+										<span class="VMOT">MOT Date</span>
+										<div class="clear"></div>
+										<a href="" class="vButton"></a>
+										<a href="" class="vButton"></a>
+										<a href="" class="vButton"></a>
+										<a href="" class="vButton"></a>
+									</div>
+									<div class="Vgraph"><img src="images/graph.jpg" /><img src="images/journey.png" /></div>
+								</li>
+							</ul>
+						</div>
       				</div>
 				</div>
 				<div id="map-canvas"></div>

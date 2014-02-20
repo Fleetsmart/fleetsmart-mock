@@ -9,9 +9,11 @@ $(document).ready(function(){
 	$("#side-menu a").click(function() {
 		if ($(this).hasClass("fullWidth")) {
 			$("#sidebar").css({width: '100%'});
+			$("#sidebar").addClass("full");
 		}
 		else {
 			$("#sidebar").css({width: ''});
+			$("#sidebar").removeClass("full");
 		}
 	});
 });

@@ -9,22 +9,12 @@ $(document).ready(function(){
 
 		if ($(window).width() < 800) {
 			$('.dropdown-menu').css('width', $(window).width());
+			$('#slideDiv').css('height', pageHeight - 99);
 		}
 		else {
 			$('.dropdown-menu').css('width', '400px');
+			$('#slideDiv').css('height', pageHeight - 159);
 		}
-
-		$('#slideDiv').slimScroll({
-				height: 'auto',
-				color: '#D03233',
-				alwaysVisible: true,
-				distance: '8px',
-				railVisible: true,
-				opacity: 0.8,
-				wheelStep: 20,
-				animate: true
-		});
-
 		if ($('#sidebar').hasClass("hideBar")) {
 			if ($(window).width() < 1199) {
 				$('#map-canvas').css('width', $(window).width() - 0);
@@ -41,7 +31,6 @@ $(document).ready(function(){
 				$('#map-canvas').css('width', $(window).width() - 705);
 			}
 		}
-
 		if ($(window).width() < 1199) {
 			$('#cbp-spmenu-s1').addClass('cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left');
 			$('#cbp-spmenu-s1').removeClass('navbar-static-side');
@@ -71,7 +60,6 @@ $(document).ready(function(){
 		// now resize the map-canvas
 		google.maps.event.trigger(map, 'resize');
 	});
-
 	$("#side-menu a").click(function(){
 		var button = $(this)
 		$("#side-menu a").removeClass("navSelected");
@@ -94,7 +82,6 @@ $(document).ready(function(){
 			}
 			$('#sidebar').removeClass("hideBar");
 	};
-
 });
 $(window).resize();
 

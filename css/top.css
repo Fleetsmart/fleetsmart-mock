@@ -8,7 +8,7 @@
 #showLeftPush.active {left:0;}
 .mapLink {display:none!important;}
 
-.alertNum {position:absolute;background:#d03233;border-radius:50%;display:block;padding:5px;font-size:12px;top:20px;right:19px;}
+.alertNum {position:absolute;background:#d03233;border-radius:50%;display:block;padding:5px;font-size:12px;top:20px;right:25px;}
 .open .alertNum {color:#fff!important;}
 .dropdown:hover .alertNum, .dropdown:active .alertNum, .dropdown a:focus .alertNum {color:#fff!important;}
 
