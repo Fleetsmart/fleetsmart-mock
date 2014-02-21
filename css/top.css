@@ -12,6 +12,8 @@
 .open .alertNum {color:#fff!important;}
 .dropdown:hover .alertNum, .dropdown:active .alertNum, .dropdown a:focus .alertNum {color:#fff!important;}
 
+ /* Media Queries */
+
 @media(min-width:1199px) {
 	#logo {display:block;}
 	#Moblogo {display:none!important;}

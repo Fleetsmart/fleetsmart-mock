@@ -5,7 +5,7 @@ a {transition: opacity .25s ease-in-out; -moz-transition: opacity .25s ease-in-o
 
 /* Wrappers */
 
-#wrapper {width:100%;background:#333;height:100%;overflow:hidden; min-width: 320px;}
+#wrapper {width:100%;background:#333;height:100%;overflow:hidden; min-width: 305px;}
 #page-wrapper {padding:0 5px 5px;height:100%;background-color:#fff; border-bottom: 5px solid #fff;}
 
 @media(min-width:768px) {
@@ -20,47 +20,26 @@ a {transition: opacity .25s ease-in-out; -moz-transition: opacity .25s ease-in-o
 #sidebar {display:block;position:relative;width:100%;margin:0;background:#eee;float:left;padding:41px 0 20px;}
 .hideSide {display:none;top:9px;right:0;position:absolute;cursor:pointer;}
 .hideSide:hover {color: #d03233;}
+
 #slideDiv {overflow-y: scroll;display:block;width:100%; float:left;}
-
-/* Let's get this party started */
-::-webkit-scrollbar {
-    width: 8px;
-}
- 
-/* Track */
-::-webkit-scrollbar-track {
-    background:#eee; 
-    margin-right:1px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #d03233; 
-}
-::-webkit-scrollbar-thumb:window-inactive {
-	background: rgba(255,0,0,0.4); 
-}
-
-@media(min-width:1199px) {
-	#map-canvas {display:block;}
-	#sidebar  {width: 500px;margin-left:0px;border-right:5px solid #fff;}
-	.hideSide {display:block;}
-}
-@media(max-width:1199px) {
-	#map-canvas {display:block;border-right:5px solid #fff;}
-	#sidebar  {width:500px;margin-left:0px;border-right:5px solid #fff;}
-	.hideSide {display:block;}
-}
-@media(max-width:800px) {
-	#map-canvas {display:none;border-right: 0px!important;border-top: 5px solid #fff;}
-	#sidebar  {width:100%;margin:5px 0 0 0px;border-right:0px solid #fff; }
-	.hideSide {display:none;}
-	.mapLink {display:block!important;}
-	.settings, .reports {display: none!important;}
-}
 #side-menu {height:100%;}
 .sideMenu {background: #ccc;position: absolute;top:0;width:100%;height:40px;}
-
 .showMap {display:block!important; width:100%!important}
-
 .full .hideSide {display:none!important;}
+
+/* Scrollbar Styles */
+
+::-webkit-scrollbar {width: 8px;}
+
+ /* Track */
+::-webkit-scrollbar-track {background:#eee;margin-right:1px;}
+
+ /* Handle */
+::-webkit-scrollbar-thumb {background: #666;}
+::-webkit-scrollbar-thumb:window-inactive {background: rgba(255,0,0,0.4);}
+
+ /* Media Queries */
+
+@media(min-width:1199px) { #map-canvas {display:block;} #sidebar  {width: 500px;margin-left:0px;border-right:5px solid #fff;} .hideSide {display:block;} }
+@media(max-width:1199px) { #map-canvas {display:block;border-right:5px solid #fff;}	#sidebar  {width:500px;margin-left:0px;border-right:5px solid #fff;} .hideSide {display:block;} }
+@media(max-width:800px) { #map-canvas {display:none;border-right: 0px!important;border-top: 5px solid #fff;} #sidebar  {width:100%;margin:5px 0 0 0px;border-right:0px solid #fff;}	.hideSide {display:none;} .mapLink {display:block!important;} .settings, .reports {display: none!important;} }

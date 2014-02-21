@@ -81,24 +81,26 @@ $(document).ready(function(){
 					$('#map-canvas').css('width', $(window).width() - 705);
 			}
 			$('#sidebar').removeClass("hideBar");
+		};
+	});
+
+	$(window).resize();
+
+	var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+		showLeft = document.getElementById( 'showLeft' ),
+
+	body = document.body;
+
+	showLeftPush.onclick = function() {
+		classie.toggle( this, 'active' );
+		classie.toggle( body, 'cbp-spmenu-push-toright' );
+		classie.toggle( menuLeft, 'cbp-spmenu-open' );
+		disableOther( 'showLeftPush' );
 	};
-});
-$(window).resize();
 
-var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-	showLeft = document.getElementById( 'showLeft' ),
-
-body = document.body;
-
-showLeftPush.onclick = function() {
-	classie.toggle( this, 'active' );
-	classie.toggle( body, 'cbp-spmenu-push-toright' );
-	classie.toggle( menuLeft, 'cbp-spmenu-open' );
-	disableOther( 'showLeftPush' );
-};
-function disableOther( button ) {
-	if( button !== 'showLeftPush' ) {
-		classie.toggle( showLeftPush, 'disabled' );
+	function disableOther( button ) {
+		if( button !== 'showLeftPush' ) {
+			classie.toggle( showLeftPush, 'disabled' );
+		}
 	}
-}
 });

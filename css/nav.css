@@ -1,5 +1,4 @@
 /* Navigation */
-/* Top Right Navigation Dropdown Styles */
 .navbar-default {border:0!important;}
 .navbar-top-links li {display:inline-block;}
 .navbar-top-links li a {padding:15px 10px;min-height:50px;}
@@ -23,13 +22,14 @@
 .navbar-static-side {border-top:5px solid #fff!important;background:#333;}
 .navbar-header {width:50px;float:left;margin-left:20px;}
 #side-menu li {border-bottom:1px solid #666;}
+#slideDiv {padding:0;display:block;}
+
+ /* Media Queries */
 
 @media(min-width:768px) {
     .navbar-static-side {z-index:100;position:absolute;width:200px;}
     .navbar-top-links .dropdown-messages,.navbar-top-links .dropdown-tasks,.navbar-top-links .dropdown-alerts {margin-left:auto;}
 }
-
-#slideDiv {padding:0;display:block;}
 
 @media(max-width:800px) {
 	.dropdown-alerts {right: -74px!important;left: auto; min-width: 330px!important;}
