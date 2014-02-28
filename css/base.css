@@ -18,10 +18,10 @@ a {transition: opacity .25s ease-in-out; -moz-transition: opacity .25s ease-in-o
 }
 
 #sidebar {display:block;position:relative;width:100%;margin:0;background:#eee;float:left;padding:41px 0 20px;}
-.hideSide {display:none;top:9px;right:0;position:absolute;cursor:pointer;}
+.hideSide {z-index: 99999;display:none;top:9px;right:0;position:absolute;cursor:pointer;}
 .hideSide:hover {color: #d03233;}
 
-#slideDiv {overflow-y: scroll;display:block;width:100%; float:left;}
+.listContainer {overflow-y: scroll;display:block;width:100%; float:left;}
 #side-menu {height:100%;}
 .sideMenu {background: #ccc;position: absolute;top:0;width:100%;height:40px;}
 .showMap {display:block!important; width:100%!important}
@@ -41,5 +41,35 @@ a {transition: opacity .25s ease-in-out; -moz-transition: opacity .25s ease-in-o
  /* Media Queries */
 
 @media(min-width:1199px) { #map-canvas {display:block;} #sidebar  {width: 500px;margin-left:0px;border-right:5px solid #fff;} .hideSide {display:block;} }
-@media(max-width:1199px) { #map-canvas {display:block;border-right:5px solid #fff;}	#sidebar  {width:500px;margin-left:0px;border-right:5px solid #fff;} .hideSide {display:block;} }
+@media(max-width:1199px) { #map-canvas {display:block;border-right:5px solid #fff;}	#side-menu {padding-top: 55px;} #side-menu li:first-child {border-top: 1px solid #666;} #sidebar  {width:500px;margin-left:0px;border-right:5px solid #fff;} .hideSide {display:block;} }
 @media(max-width:800px) { #map-canvas {display:none;border-right: 0px!important;border-top: 5px solid #fff;} #sidebar  {width:100%;margin:5px 0 0 0px;border-right:0px solid #fff;}	.hideSide {display:none;} .mapLink {display:block!important;} .settings, .reports {display: none!important;} }
+
+
+/* Settings Tabs */
+#tabButton {display:none;}
+.full {padding-top:10px!important;}
+.full #slideDiv {overflow: hidden;}
+.full .sideMenu {display:none;}
+#settingsBox {background: #FFFFFF;position:relative;display: none; margin: 10px; padding: 15px;}
+#settingsBox .tabBox {overflow-y: scroll; overflow-x: hidden; height: 100%;padding-right:10px;}
+#settingsBox .tabs {list-style:none; width: 100%; height:44px; display:block; border-bottom: 1px solid #ccc;padding:0;}
+#settingsBox .tabs li {display:block;float:left;padding:0;}
+#settingsBox .tabs li a {padding:12px 15px 0;display:block;color:#333; font-size: 12px; height:44px;}
+#settingsBox .tabs li .active  {border-top: 1px solid #ccc; border-bottom: 1px solid #fff; color:#D03233; background:#fff; border-left: 1px solid #ccc; border-right:1px solid #ccc;}
+
+.rq {margin-left: 5px; color: #D03233;}
+
+@media(min-width:990px) {
+.form-group {display:block;float:left;width:50%;padding:15px 0;margin:0!important;}
+}
+
+@media(max-width:600px) {
+#settingsBox .tabs li a {padding:12px 10px 0;}
+#settingsBox .tabs {list-style:none; width: 100%; height:44px; display:block; border-bottom: 1px solid #ccc;padding:0;}
+#settingsBox .tabs li {display:block;float:left;padding:0;width: 100%;}
+#settingsBox .tabs li a {padding:12px 0px 0;background:#eee; border-bottom: 1px solid #ccc;text-align: center; width:100%;display:block;color:#333; font-size: 12px; height:44px;}
+#settingsBox .tabs li .active  {border: 0px!important; color:#fff; background:#D03233; }
+#tabButton {display:block; height: 45px; width: 100%;text-align: center; padding: 12px 0 0;background:#ccc; }
+#tabs {position: absolute; left:-999px;}
+.showTabs {left:0!important; z-index:999999;}
+}

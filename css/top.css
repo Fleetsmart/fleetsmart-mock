@@ -8,9 +8,12 @@
 #showLeftPush.active {left:0;}
 .mapLink {display:none!important;}
 
-.alertNum {position:absolute;background:#d03233;border-radius:50%;display:block;padding:5px;font-size:12px;top:20px;right:25px;}
+.alertNum {position:absolute;background:#d03233;border-radius:50%;display:block;padding:5px;font-size:12px;top:-5px;right:32px;}
 .open .alertNum {color:#fff!important;}
 .dropdown:hover .alertNum, .dropdown:active .alertNum, .dropdown a:focus .alertNum {color:#fff!important;}
+
+.dropdown .top-fa {margin-right: 5px;position: absolute;right: 10px;text-align: center;top: 17px;width: 50px;}
+.dropdown .top-faDown {position:absolute; right: 15px; top: 18px;}
 
  /* Media Queries */
 

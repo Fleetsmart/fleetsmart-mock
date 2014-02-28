@@ -3,6 +3,38 @@
 	{
 		"selected_items":
 		[
+			[
+				"sc",
+				"scroll"
+			],
+			[
+				"scro",
+				"Scrollbar"
+			],
+			[
+				"v",
+				"vehiceView1"
+			],
+			[
+				"re",
+				"render"
+			],
+			[
+				"V",
+				"VehicleView"
+			],
+			[
+				"Veh",
+				"VehicleModel"
+			],
+			[
+				"rem",
+				"removeClass"
+			],
+			[
+				"min",
+				"min-width"
+			]
 		]
 	},
 	"buffers":
@@ -11,7 +43,119 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 7730,
+				"buffer_size": 15825,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test.html",
+			"settings":
+			{
+				"buffer_size": 2283,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/vehicle.js",
+			"settings":
+			{
+				"buffer_size": 297,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/base.css",
+			"settings":
+			{
+				"buffer_size": 3903,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/vehicles.css",
+			"settings":
+			{
+				"buffer_size": 2126,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/nav.css",
+			"settings":
+			{
+				"buffer_size": 1939,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/nav.js",
+			"settings":
+			{
+				"buffer_size": 1228,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/layout.js",
+			"settings":
+			{
+				"buffer_size": 3168,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/top.css",
+			"settings":
+			{
+				"buffer_size": 1245,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/bootstrap.css",
+			"settings":
+			{
+				"buffer_size": 123097,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/poi.js",
+			"settings":
+			{
+				"buffer_size": 2101,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/poi2.js",
+			"settings":
+			{
+				"buffer_size": 5164,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "//dc1.jwsgroup.local/Users$/styson/Desktop/tutorial/backbone-tutorial.html",
+			"settings":
+			{
+				"buffer_size": 3908,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/veh.js",
+			"settings":
+			{
+				"buffer_size": 4776,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/app.js",
+			"settings":
+			{
+				"buffer_size": 6622,
 				"line_ending": "Windows"
 			}
 		}
@@ -40,11 +184,24 @@
 	},
 	"file_history":
 	[
+		"//dc1.jwsgroup.local/Users$/styson/Desktop/GitHub/fleetsmart-mock/js/veh.js",
+		"//dc1.jwsgroup.local/Users$/styson/Desktop/GitHub/fleetsmart-mock/css/bootstrap.css",
+		"//dc1.jwsgroup.local/Users$/styson/Desktop/GitHub/fleetsmart-mock/templates/sidebar.html",
+		"//dc1.jwsgroup.local/Users$/styson/Desktop/GitHub/fleetsmart-mock/js/layout.js",
+		"//dc1.jwsgroup.local/Users$/styson/Desktop/GitHub/fleetsmart-mock/js/tabs.js",
+		"/C/Users/styson/AppData/Roaming/Sublime Text 2/Packages/User/Distraction Free.sublime-settings",
+		"//dc1.jwsgroup.local/Users$/styson/Desktop/GitHub/fleetsmart-mock/V3.sublime-project",
+		"//dc1.jwsgroup.local/Users$/styson/Desktop/GitHub/fleetsmart-mock/css/base.css",
+		"//dc1.jwsgroup.local/Users$/styson/Desktop/GitHub/fleetsmart-mock/css/component.css",
+		"//dc1.jwsgroup.local/Users$/styson/Desktop/GitHub/fleetsmart-mock/css/nav.css",
+		"//dc1.jwsgroup.local/Users$/styson/Desktop/GitHub/fleetsmart-mock/css/top.css",
+		"//dc1.jwsgroup.local/Users$/styson/Desktop/GitHub/fleetsmart-mock/css/vehicles.css",
+		"//dc1.jwsgroup.local/Users$/styson/Desktop/GitHub/fleetsmart-mock/js/sb-admin.js",
 		"//dc1.jwsgroup.local/Users$/styson/Desktop/GitHub/fleetsmart-mock/index.html"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -58,6 +215,34 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Vans",
+			"Trucks",
+			"Cars",
+			"filterType",
+			"idling",
+			"in transit",
+			"filterByType",
+			"createSelect",
+			"showTabs",
+			"filterByType",
+			"renderContact",
+			"contacts",
+			"filterByType",
+			".el",
+			"el",
+			"header",
+			"contacts",
+			"#vehicle_template",
+			".vehicleList",
+			".vehicleListSmall",
+			"required",
+			"help-block",
+			">\n",
+			"vehiclesBox",
+			"settingsNav",
+			"#tab",
+			"sb-admin.css",
+			"min-width"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -65,6 +250,14 @@
 		"regex": false,
 		"replace_history":
 		[
+			"Group 3",
+			"Group 2",
+			"Group 1",
+			"Idling",
+			"In Transit",
+			"vehicles",
+			"#vehicles",
+			".vehicleList"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -75,7 +268,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 14,
 			"sheets":
 			[
 				{
@@ -83,7 +276,63 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 7730,
+						"buffer_size": 15825,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4818,
+								4818
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test.html",
+					"settings":
+					{
+						"buffer_size": 2283,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								535,
+								535
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/vehicle.js",
+					"settings":
+					{
+						"buffer_size": 297,
 						"regions":
 						{
 						},
@@ -96,8 +345,334 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "css/base.css",
+					"settings":
+					{
+						"buffer_size": 3903,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3903,
+								3903
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 598.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "css/vehicles.css",
+					"settings":
+					{
+						"buffer_size": 2126,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2126,
+								2126
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "css/nav.css",
+					"settings":
+					{
+						"buffer_size": 1939,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								955,
+								955
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 54.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "js/nav.js",
+					"settings":
+					{
+						"buffer_size": 1228,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1065,
+								959
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "js/layout.js",
+					"settings":
+					{
+						"buffer_size": 3168,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								291,
+								291
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "css/top.css",
+					"settings":
+					{
+						"buffer_size": 1245,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1043,
+								1043
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "css/bootstrap.css",
+					"settings":
+					{
+						"buffer_size": 123097,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								37319,
+								37319
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 35249.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "js/poi.js",
+					"settings":
+					{
+						"buffer_size": 2101,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								237,
+								319
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "js/poi2.js",
+					"settings":
+					{
+						"buffer_size": 5164,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3822,
+								3822
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "//dc1.jwsgroup.local/Users$/styson/Desktop/tutorial/backbone-tutorial.html",
+					"settings":
+					{
+						"buffer_size": 3908,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2276,
+								2276
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 695.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "js/veh.js",
+					"settings":
+					{
+						"buffer_size": 4776,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "js/app.js",
+					"settings":
+					{
+						"buffer_size": 6622,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								194,
+								194
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -141,7 +716,7 @@
 	"menu_visible": true,
 	"replace":
 	{
-		"height": 0.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -164,6 +739,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 237.0,
 	"status_bar_visible": true
 }

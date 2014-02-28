@@ -8,11 +8,12 @@
 		<!-- Core CSS - Include with every page -->
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="font-awesome/css/font-awesome.css" rel="stylesheet">
-		
+
 		<link rel="shortcut icon" href="http://www.fleetsmartlive.com/images/favicon.ico"/>
 		<!-- SB Admin CSS - Include with every page -->
 		<link href="css/styles.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" href="css/chosen.css">
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfGnqBjOP6w0P5iAp-Liz9jpHbvqZ-daM&sensor=false"></script>
@@ -29,29 +30,43 @@
 		<script src="js/underscore.js"></script>
 		<script src="js/backbone.js"></script>
 
+		<!-- Include the plugin's CSS and JS: -->
+		<script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+		<link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
 
+		<script id="poi_template" type="text/x-handlebars-template">
+			<div class="col1">
+				<img src="images/<%= photo %>.png" class="img" alt="<%= address %>" />
+			</div>
+			<div class="col2">
+				<span class="pAddress"><%= address %></span>
+				<span class="pRadius">Radius: <span><%= Radius %></span></span>
+				<span class="pRadius">Out of Bounds: <span><%= Bounds %></span></span>
+				<span class="pRadius">Applies to: <span><%= Applies %></span></span>
+			</div>
+			<div style="clear:both;"></div>
 
-		<script id="vehicle_template" type="text/template">
-	<div class="col1">
-		<img src="images/car.png" class="img" alt="" />
-		<span class="Vtitle"> <%= title %> </span>
-		<span class="Vposition"><%= location %></span>
-	</div>
-	<div class="col2">
-		<span class="Vtime"><%= date %> <span><%= time %></span></span>
-		<span class="Vspeed"><%= status %> <span><%= speed %></span></span>
-	</div>
-	<div class="Vgraph">
-		<img src="images/graph.jpg" />
-		<img src="images/journey.png" />
-	</div>
-</script>
+		</script>
 
+		<script id="vehicleTemplate" type="text/template">
+			<div class="col1">
+				<img src="images/<%= photo %>.png" alt="<%= name %>" />
+				<span class="Vtitle"> <%= title %> </span>
+				<span class="Vposition"><%= location %></span>
+			</div>
+			<div class="col2">
+				<span class="Vtime"><%= date %> <span><%= time %></span></span>
+				<span class="Vspeed"><%= status %> <span><%= speed %></span></span>
+			</div>
+			<div class="Vgraph">
+				<img src="images/graph.jpg" />
+				<img src="images/journey.png" />
+			</div>
+	  </script>
 
 		<script src="js/vehicle.js"></script>
 
-
-	</head>
+			</head>
 	<body>
 		<div id="wrapper">
 			<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -66,7 +81,7 @@
 				<!-- /.navbar-header -->
 				<ul class="nav navbar-top-links navbar-right">
 					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-bell fa-fw"><span class="alertNum">12</span></i>  <i class="fa fa-caret-down"></i></a>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-bell fa-fw top-fa"><span class="alertNum">12</span></i>  <i class="fa fa-caret-down top-faDown"></i></a>
 						<ul class="dropdown-menu dropdown-alerts">
 							<li><a href="#"><div><i class="fa fa-pause fa-fw"></i> KY59XJZ: Idle for 35 mins<span class="pull-right text-muted small">06:07</span></div></a></li>
 							<li><a href="#"><div><i class="fa fa-clock-o fa-fw"></i> 24: Vehicle stopped OOH.<span class="pull-right text-muted small">06:07</span></div></a></li>
@@ -83,27 +98,229 @@
 		   <nav class="navbar-static-side" id="cbp-spmenu-s1">
 				<ul class="nav" id="side-menu">
 					<li class="mapLink"><a href="#"><i class="fa fa-map-marker fa-fw"></i> Map</a></li>
-					<li><a href="#" class="navSelected"><i class="fa fa-truck fa-fw"></i> Vehicles</a></li>
-					<li><a href="#"><i class="fa fa-thumb-tack fa-fw"></i> POI</a></li>
+					<li><a href="#" id="vehicleNav" class="navSelected"><i class="fa fa-truck fa-fw"></i> Vehicles</a></li>
+					<li><a href="#" id="poiNav"><i class="fa fa-thumb-tack fa-fw"></i> POI</a></li>
 					<li><a href="#"><i class="fa fa-play-circle fa-fw"></i> Replay</a></li>
 					<li><a href="#"  class="reports fullWidth"><i class="fa fa-file fa-fw"></i> Reporting</a></li>
-					<li><a href="#" class="settings fullWidth"><i class="fa fa-wrench fa-fw"></i> Settings</a></li>
+					<li><a href="#" id="settingsNav" class="fullWidth"><i class="fa fa-wrench fa-fw"></i> Settings</a></li>
 					<li><a href="#" class="logout"><i class="fa fa-wrench fa-fw"></i> Logout</a></li>
 				</ul>
 			</nav>
 			<div id="page-wrapper">
 				<div id="sidebar">
-					<div id="vList">
-					<div class="sideMenu">
-						<span class="hideSide fa fa-times fa-fw"></span>
+					<span class="hideSide fa fa-times fa-fw"></span>
+					<div id="vehiclesBox" class="sideContainer listContainer">
+							<div class="sideMenu">
+								<div id="filter"></div>
+							</div>
+							<ul id="vehicles" class="List">
+        			</ul>
 					</div>
-					<div id="slideDiv">
-								<ul id="vehicles" class="vehicleListSmall">
 
-							</ul>
-      		</div>
-      	</div>
+    		<div id="poiBox" class="sideContainer listContainer">
+							<div class="sideMenu">
+							</div>
+							<ul id="poi" class="List"></ul>
 				</div>
+				<div id="settingsBox" class="sideContainer">
+						<a href="" id="tabButton">Settings Menu</a>
+						<div id="tabs">
+						<ul class="tabs">
+							<li><a href="#tab1" id="vehicleSmall" class="selected">Account Settings</a></li>
+							<li><a href="#tab2" id="vehicleMed">Alert Center</a></li>
+							<li><a href="#tab3" id="vehicleLarge">Users</a></li>
+							<li><a href="#tab4" id="vehicleLarge">Vehicles</a></li>
+							<li><a href="#tab5" id="vehicleLarge">Drivers</a></li>
+							<li><a href="#tab6" id="vehicleLarge">Jobs</a></li>
+							<div style="clear: both"></div>
+						</ul>		
+						</div>	 	
+
+						<div style="clear: both"></div>	 			 		 		
+
+						<div id="tab1" class="tabBox">
+							<form class="form-horizontal" role="form">
+								<div class="form-group">
+									<label for="inputEmail3" class="col-sm-3 control-label">Email<span class="rq">*</span></label>
+									   <div class="col-sm-9">
+									      <input type="email" class="form-control" id="inputEmail3" placeholder="Email" autofocus>
+									   </div>
+									</div>
+									  <div class="form-group">
+									    <label for="inputPtelephone" class="col-sm-3 control-label">Primary Phone<span class="rq">*</span></label>
+									    <div class="col-sm-9">
+									      <input type="password" class="form-control" id="inputPtelephone" placeholder="Primary telephone">
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label for="inputEmail3" class="col-sm-3 control-label">Secondary Phone<span class="rq">*</span></label>
+									    <div class="col-sm-9">
+									      <input type="email" class="form-control" id="inputEmail3" placeholder="Secondary Telephone">
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label for="inputPtelephone" class="col-sm-3 control-label">Building No / Name<span class="rq">*</span></label>
+									    <div class="col-sm-9">
+									      <input type="password" class="form-control" id="inputPtelephone" placeholder="Building Number / Name">
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label for="inputEmail3" class="col-sm-3 control-label">Street</label>
+									    <div class="col-sm-9">
+									      <input type="email" class="form-control" id="inputEmail3" placeholder="Street">
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label for="inputPtelephone" class="col-sm-3 control-label">Town / City</label>
+									    <div class="col-sm-9">
+									      <input type="password" class="form-control" id="inputPtelephone" placeholder="Town / City">
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label for="inputEmail3" class="col-sm-3 control-label">County</label>
+									    <div class="col-sm-9">
+									      <input type="email" class="form-control" id="inputEmail3" placeholder="County">
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label for="inputPtelephone" class="col-sm-3 control-label">Postcode</label>
+									    <div class="col-sm-9">
+									      <input type="password" class="form-control" id="inputPtelephone" placeholder="Postcode">
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label for="inputEmail3" class="col-sm-3 control-label">Country</label>
+									    <div class="col-sm-9">
+									      <input type="email" class="form-control" id="inputEmail3" placeholder="Country">
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label for="inputPtelephone" class="col-sm-3 control-label">Timezone Area<span class="rq">*</span></label>
+									    <div class="col-sm-9">
+									      <select class="multiselect" multiple="multiple">
+									      	<optgroup label="Mathematics">
+														<option value="africa"> Africa </option>
+														<option value="america"> America </option>
+													</optgroup>
+													<optgroup label="Mathematics">
+														<option value="asia"> Asia </option>
+														<option value="australia"> Australia </option>
+														<option selected="selected" value="europe"> Europe </option>
+													</optgroup>
+												</select>
+
+												<p class="help-block">Test test</p>
+									    </div>
+									  </div>
+										<div class="form-group">
+									    <label for="inputPtelephone" class="col-sm-3 control-label">Account Timezone</label>
+									    <div class="col-sm-9">
+									      <select class="form-control">
+            							<option value=""></option>
+													<option value="59">UTC-04:00 Bermuda</option>
+													<option value="151">UTC-03:00 Stanley</option>
+													<option value="174">UTC-02:00 South Georgia</option>
+													<option value="295">UTC-01:00 Azores</option>
+													<option value="129">UTC-01:00 Cape Verde</option>
+													<option value="147">UTC+00:00 Canary</option>
+													<option value="188">UTC+00:00 Dublin</option>
+													<option value="155">UTC+00:00 Faroe</option>
+													<option value="162">UTC+00:00 Guernsey</option>
+													<option value="190">UTC+00:00 Isle of Man</option>
+													<option value="197">UTC+00:00 Jersey</option>
+													<option value="293">UTC+00:00 Lisbon</option>
+													<option selected="selected" value="158">UTC+00:00 London</option>
+													<option value="195">UTC+00:00 Reykjavik</option>
+													<option value="325">UTC+00:00 St Helena</option>
+													<option value="272">UTC+01:00 Amsterdam</option>
+													<option value="1">UTC+01:00 Andorra</option>
+													<option value="301">UTC+01:00 Belgrade</option>
+													<option value="133">UTC+01:00 Berlin</option>
+													<option value="328">UTC+01:00 Bratislava</option>
+													<option value="52">UTC+01:00 Brussels</option>
+													<option value="183">UTC+01:00 Budapest</option>
+													<option value="135">UTC+01:00 Copenhagen</option>
+													<option value="164">UTC+01:00 Gibraltar</option>
+													<option value="326">UTC+01:00 Ljubljana</option>
+													<option value="226">UTC+01:00 Luxembourg</option>
+													<option value="145">UTC+01:00 Madrid</option>
+													<option value="248">UTC+01:00 Malta</option>
+													<option value="230">UTC+01:00 Monaco</option>
+													<option value="273">UTC+01:00 Oslo</option>
+													<option value="156">UTC+01:00 Paris</option>
+													<option value="232">UTC+01:00 Podgorica</option>
+													<option value="132">UTC+01:00 Prague</option>
+													<option value="196">UTC+01:00 Rome</option>
+													<option value="330">UTC+01:00 San Marino</option>
+													<option value="49">UTC+01:00 Sarajevo</option>
+													<option value="237">UTC+01:00 Skopje</option>
+													<option value="323">UTC+01:00 Stockholm</option>
+													<option value="6">UTC+01:00 Tirane</option>
+													<option value="221">UTC+01:00 Vaduz</option>
+													<option value="392">UTC+01:00 Vatican</option>
+													<option value="33">UTC+01:00 Vienna</option>
+													<option value="288">UTC+01:00 Warsaw</option>
+													<option value="181">UTC+01:00 Zagreb</option>
+													<option value="115">UTC+01:00 Zurich</option>
+													<option value="173">UTC+02:00 Athens</option>
+													<option value="300">UTC+02:00 Bucharest</option>
+													<option value="231">UTC+02:00 Chisinau</option>
+													<option value="149">UTC+02:00 Helsinki</option>
+													<option value="349">UTC+02:00 Istanbul</option>
+													<option value="354">UTC+02:00 Kiev</option>
+													<option value="47">UTC+02:00 Mariehamn</option>
+													<option value="227">UTC+02:00 Riga</option>
+													<option value="54">UTC+02:00 Sofia</option>
+													<option value="141">UTC+02:00 Tallinn</option>
+													<option value="225">UTC+02:00 Vilnius</option>
+													<option value="302">UTC+03:00 Kaliningrad</option>
+													<option value="81">UTC+03:00 Minsk</option>
+													<option value="303">UTC+04:00 Moscow</option>
+												</select>
+									    </div>
+									  </div>
+										<div class="form-group">
+									    <label for="inputPtelephone" class="col-sm-3 control-label">Alert / Sidebar Time</label>
+									    <div class="col-sm-9">
+									      <select class="form-control">
+													<option value="false">Vehicle's Timezone</option>
+													<option selected="selected" value="true">Account's Timezone</option>
+												</select>
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label for="inputPtelephone" class="col-sm-3 control-label">Business Hours</label>
+									    <div class="col-sm-9">
+									      <select class="form-control">
+													<option value="false">Vehicle's Timezone</option>
+													<option selected="selected" value="true">Account's Timezone</option>
+												</select>
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label for="inputPtelephone" class="col-sm-3 control-label">Report Time </label>
+									    <div class="col-sm-9">
+									      <select class="form-control">
+													<option value="false">Vehicle's Timezone</option>
+													<option selected="selected" value="true">Account's Timezone</option>
+												</select>
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <div class="col-sm-offset-3 col-sm-9">
+									      <button type="submit" class="btn btn-default btn-green">Save Changes</button>
+									    </div>
+									  </div>
+									  <div style="clear:both"></div>
+								</form>
+								</div>
+								<div id="tab2" class="tabBox">Tab2</div>
+								<div id="tab3" class="tabBox">Tab3</div>
+								<div id="tab4" class="tabBox">Tab4</div>
+								<div id="tab5" class="tabBox">Tab5</div>
+								<div id="tab6" class="tabBox">Tab6</div>
+							</div>
+      	</div>
 				<div id="map-canvas"></div>
 			</div>
 			<!-- /#page-wrapper -->
@@ -111,29 +328,52 @@
 		<!-- /#wrapper -->
 
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
 
-for(var i = 0; i < 100; i++ ) {
-var vehice1 = new VehicleModel({ 
+for(var i = 0; i < 30; i++ ) {
+var vehice1 = new VehicleModel({
 			title: '12345',
 			location: 'wigan',
-			date: '21/01/14', 
-			time: '05:45', 
+			date: '21/01/14',
+			time: '05:45',
 			status: 'in transit',
 			speed: '53mph'
 });
-
 
 var vehiceView1 = new VehicleView({
 	model : vehice1
 })
 vehiceView1.render();
 
-$('#vehicles').append(vehiceView1.el);
+$('#vehicles2').append(vehiceView1.el);
 }
+</script> -->
+
+<script src="js/poi2.js"></script>
+<script src="js/app.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.multiselect').multiselect({
+		enableFiltering: true
+	});
+});
+
+$('.multiselect-group').before('<input type="checkbox" />');
+
+$(document).on('click', '.multiselect-group', function(event) {
+    var checkAll = true;
+    var $opts = $(this).parent().nextUntil(':has(.multiselect-group)'); 
+    var $inactive = $opts.filter(':not(.active)'); 
+    var $toggleMe = $inactive;
+    if ($inactive.length == 0) { 
+        $toggleMe = $opts;
+        checkAll = false;
+    }
+    $toggleMe.find('input').click();
+    $(this).parent().find('input').attr('checked', checkAll);
+    $event.preventDefault();   
+});
 </script>
-
-	</body>
-
-
+</body>
 </html>
