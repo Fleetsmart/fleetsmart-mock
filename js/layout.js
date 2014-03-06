@@ -9,7 +9,8 @@ $(document).ready(function(){
 		$('.listContainer').css('height', pageHeight - 99);
 		$('.tabBox').css('height', pageHeight - 172);
 
-		if ($(window).width() < 800) {
+
+	if ($(window).width() < 800) {
 			$('.dropdown-menu').css('width', $(window).width());
 		}
 		else {
@@ -46,7 +47,11 @@ $(document).ready(function(){
 		 if ($(window).width() < 800) {
 		 			$('#sidebar').css({marginLeft: '0'}, 800);
 		}
+
 	});
+
+
+
 	$(".hideSide").click(function(){
 		$('#sidebar').animate({marginLeft: '-101%'}, 800);
 		$('#sidebar').addClass("hideBar");
@@ -86,7 +91,22 @@ $(document).ready(function(){
 	
 	});
 
+	$(".formNav a").click(function(){
+		var container = '#' +  $(this).closest('div').attr('id');
+		var tab = 'div#' + this.id;
+		var link = container + ' a';
+		var box = container + ' .formBox';
+
+		$(link).removeClass("active");
+		$(this).addClass("active");
+		console.log(link);
+		$(box).removeClass('active');
+		$(tab).addClass('active');
+	})
+
 	$(window).resize();
+
+
 
 	var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
 		showLeft = document.getElementById( 'showLeft' ),

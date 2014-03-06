@@ -35,10 +35,14 @@
 
 @media(max-width:800px) {
 	.dropdown-alerts {right: 0px!important;left: auto; min-width: 330px!important;}
+}
 
+@media(max-width:680px) {
+#settingsNav, .reports {display: none!important;}  {display:none;}
 }
 
 @media(max-width:500px) {
 	.dropdown-alerts li a div .fa {display:none;}
+
 }
 
