@@ -91,3 +91,4 @@ div.activeTab {display:block;}
 .nav-tabs .active a{color:#D03233!important;}
 .tab-content > .tab-pane {border:1px solid #ddd;border-top: 0;background:#FFFFFF;margin:0 10px 10px;overflow-y:scroll;overflow-x:hidden;height:100%;padding:20px;}
 .dropdown-menu > li > a {padding:10px 20px;color:#333!important;}
+.datetimepicker-dropdown-bottom-right {width:210px!important;}
