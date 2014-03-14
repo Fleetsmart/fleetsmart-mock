@@ -1,8 +1,10 @@
 
-#logo {border-right:5px solid #fff;text-align:center;padding:16px 0 0;background:#d03233;display:none;display:none;width:205px;left:0;position:absolute;height:100%;}
-#logo img {width:180px;}
+#logo, #logoNav {border-right:5px solid #fff;text-align:center;padding:16px 0 0;background:#d03233;display:none;display:none;width:205px;left:0;position:absolute;height:100%;}
+#logo img, #logoNav img {width:180px;}
+#logoNav {display:block;top:0;width:245px;height:54px;text-align:left;padding-left:10px;border-bottom:4px solid #fff;}
 #Moblogo {position:absolute;top:8px;left:90px;}
 .Moblogo {width:35px;}
+.navbar-static-side #logoNav {display:none;}
 
 #showLeftPush {display:block;position:absolute;left:-5px;top:0;width:80px;height:100%;background:#D03233;padding:0;border:0;border-left:5px solid #fff;border-right:5px solid #fff;color:#fff;font-size: 30px;}
 #showLeftPush.active {left:0;}
@@ -16,15 +18,6 @@
 .dropdown .top-faDown {position:absolute; right: 15px; top: 18px;}
 
  /* Media Queries */
-
-@media(min-width:1199px) {
-	#logo {display:block;}
-	#Moblogo {display:none!important;}
-}
-@media(max-width:1199px) {
-	#logo {display:none;}
-}
-@media(max-width:800px) {
-	#logo {display:none;}
-	.mapLink {display:block!important;}
-}
+@media(min-width:1199px) {#logo {display:block;}#Moblogo {display:none!important;}}
+@media(max-width:1199px) {#logo {display:none;}}
+@media(max-width:800px) {#logo {display:none;}.mapLink {display:block!important;}}

@@ -43,7 +43,15 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 36340,
+				"buffer_size": 40742,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/nav.js",
+			"settings":
+			{
+				"buffer_size": 1312,
 				"line_ending": "Windows"
 			}
 		},
@@ -85,7 +93,7 @@
 			"file": "css/base.css",
 			"settings":
 			{
-				"buffer_size": 5879,
+				"buffer_size": 6410,
 				"line_ending": "Windows"
 			}
 		},
@@ -101,15 +109,7 @@
 			"file": "css/nav.css",
 			"settings":
 			{
-				"buffer_size": 1939,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/nav.js",
-			"settings":
-			{
-				"buffer_size": 1228,
+				"buffer_size": 2035,
 				"line_ending": "Windows"
 			}
 		},
@@ -181,7 +181,7 @@
 			"file": "js/layout.js",
 			"settings":
 			{
-				"buffer_size": 3512,
+				"buffer_size": 3518,
 				"line_ending": "Windows"
 			}
 		}
@@ -243,6 +243,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"timepicker1",
 			"vehicles",
 			"backgridTest",
 			"checkout",
@@ -307,15 +308,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 36340,
+						"buffer_size": 40742,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								29348,
-								29348
+								17405,
+								17405
 							]
 						],
 						"settings":
@@ -325,13 +326,40 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 9983.0,
+						"translation.y": 6078.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "js/nav.js",
+					"settings":
+					{
+						"buffer_size": 1312,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								875,
+								884
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "js/backgridTest.js",
 					"settings":
 					{
@@ -360,7 +388,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "js/grid.json",
 					"settings":
 					{
@@ -388,7 +416,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "js/veh.js",
 					"settings":
 					{
@@ -416,7 +444,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "test.html",
 					"settings":
 					{
@@ -444,19 +472,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "css/base.css",
 					"settings":
 					{
-						"buffer_size": 5879,
+						"buffer_size": 6410,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3351,
-								3351
+								3536,
+								3536
 							]
 						],
 						"settings":
@@ -465,13 +493,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 526.0,
+						"translation.y": 635.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "css/vehicles.css",
 					"settings":
 					{
@@ -497,19 +525,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "css/nav.css",
 					"settings":
 					{
-						"buffer_size": 1939,
+						"buffer_size": 2035,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1861,
-								1752
+								1902,
+								1902
 							]
 						],
 						"settings":
@@ -518,33 +546,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 54.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "js/nav.js",
-					"settings":
-					{
-						"buffer_size": 1228,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1060,
-								1060
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -774,15 +775,15 @@
 					"file": "js/layout.js",
 					"settings":
 					{
-						"buffer_size": 3512,
+						"buffer_size": 3518,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2819,
-								2819
+								1614,
+								1614
 							]
 						],
 						"settings":
@@ -791,7 +792,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1080.0,
+						"translation.y": 378.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

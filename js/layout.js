@@ -7,7 +7,7 @@ $(document).ready(function(){
 		$('#page-wrapper').css('height', pageHeight - 51);
 		$('#map-canvas').css('height', pageHeight - 56);
 		$('.listContainer').css('height', pageHeight - 99);
-		$('.tabBox').css('height', pageHeight - 172);
+		$('.tab-pane').css('height', pageHeight - 172);
 
 
 	if ($(window).width() < 800) {
@@ -97,11 +97,11 @@ $(document).ready(function(){
 		var link = container + ' a';
 		var box = container + ' .formBox';
 
-		$(link).removeClass("active");
-		$(this).addClass("active");
+		$(link).removeClass("activeTab");
+		$(this).addClass("activeTab");
 		console.log(link);
-		$(box).removeClass('active');
-		$(tab).addClass('active');
+		$(box).removeClass('activeTab');
+		$(tab).addClass('activeTab');
 	})
 
 	$(window).resize();

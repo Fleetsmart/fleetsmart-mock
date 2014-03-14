@@ -33,6 +33,14 @@ $(document).ready(function(){
 		$("#poiBox").css('display', 'block');
 	});
 
+	$("#replayNav").click(function() {
+		$("#replayBox").css('display', 'block');
+	});
+
+	$("#reportNav").click(function() {
+		$("#reportsBox").css('display', 'block');
+	});
+
 	$("#settingsNav").click(function() {
 		$("#settingsBox").css('display', 'block');
 	});

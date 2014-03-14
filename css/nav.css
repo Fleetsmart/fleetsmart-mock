@@ -2,7 +2,7 @@
 .navbar-default {border:0!important;}
 .navbar-top-links li {display:inline-block;}
 .navbar-top-links li a {padding:15px 10px;min-height:50px;}
-.dropdown-toggle {width: 80px;}
+.dropdown-toggle {width: auto;}
 .navbar-top-links .dropdown-menu li {display:block;}
 .navbar-top-links .dropdown-menu li:last-child {margin-right:0;}
 .navbar-top-links .dropdown-menu li a {padding:10px 10px;min-height:0; border-bottom: 1px solid #eee;}

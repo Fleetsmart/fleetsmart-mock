@@ -14,6 +14,7 @@
 		<link href="css/styles.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<link rel="stylesheet" href="css/backgrid.min.css" />
+		<link href="css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
 
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -21,9 +22,8 @@
 		<script src="js/map.js"></script>
 		<script src="js/layout.js"></script>
 		<script src="js/nav.js"></script>
-		<script src="js/tabs.js"></script>
 		<script src="js/modernizr.custom.js"></script>
-
+		
 		<!-- Core Scripts - Include with every page -->
 		<script src="js/jquery-1.10.2.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -31,6 +31,7 @@
 		<script src="js/underscore.js"></script>
 		<script src="js/backbone.js"></script>
 		<script src="js/backgrid.js"></script>
+		
 
 		<!-- Include the plugin's CSS and JS: -->
 		<script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
@@ -67,8 +68,7 @@
 	  </script>
 
 		<script src="js/vehicle.js"></script>
-    
-
+   
 	</head>
 	<body>
 		<div id="wrapper">
@@ -100,13 +100,14 @@
 			<!-- /.navbar-static-top -->
 		   <nav class="navbar-static-side" id="cbp-spmenu-s1">
 				<ul class="nav" id="side-menu">
+					<div id="logoNav"><img src="images/logo.png" alt="Fleetsmart" /></div>
 					<li class="mapLink"><a href="#"><i class="fa fa-map-marker fa-fw"></i> Map</a></li>
 					<li><a href="#" id="vehicleNav" class="navSelected"><i class="fa fa-truck fa-fw"></i> Vehicles</a></li>
 					<li><a href="#" id="poiNav"><i class="fa fa-thumb-tack fa-fw"></i> POI</a></li>
-					<li><a href="#"><i class="fa fa-play-circle fa-fw"></i> Replay</a></li>
-					<li><a href="#"  class="reports fullWidth"><i class="fa fa-file fa-fw"></i> Reporting</a></li>
-					<li><a href="#" id="settingsNav" class="fullWidth"><i class="fa fa-wrench fa-fw"></i> Settings</a></li>
-					<li><a href="#" class="logout"><i class="fa fa-wrench fa-fw"></i> Logout</a></li>
+					<li><a href="#" id="replayNav"><i class="fa fa-play-circle fa-fw"></i> Replay</a></li>
+					<li><a href="#" id="reportNav" class="reports fullWidth"><i class="fa fa-file fa-fw"></i> Reporting</a></li>
+					<li><a href="#" id="settingsNav" class="fullWidth"><i class="fa fa-cogs fa-fw"></i> Settings</a></li>
+					<li><a href="#" class="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
 				</ul>
 			</nav>
 			<div id="page-wrapper">
@@ -124,23 +125,173 @@
 							</div>
 							<ul id="poi" class="List"></ul>
 				</div>
-				<div id="settingsBox" class="sideContainer">
-						<a href="" id="tabButton">Settings Menu</a>
-						<div id="tabs">
-						<ul class="tabs">
-							<li><a href="#tab1" class="selected">Account Settings</a></li>
-							<li><a href="#tab2">Alert Center</a></li>
-							<li><a href="#tab3">Alert Recipient</a></li>
-							<li><a href="#tab4">Users</a></li>
-							<li><a href="#tab5">Vehicles</a></li>
-							<li><a href="#tab6">Drivers</a></li>
-							<li><a href="#tab7">Jobs</a></li>
-							<div style="clear: both"></div>
-						</ul>		
-						</div>	 	
-						<div style="clear: both"></div>	 			 		 		
+    		<div id="reportsBox" class="sideContainer listContainer">
 
-						<div id="tab1" class="tabBox">
+				</div>
+				<div id="replayBox" class="sideContainer">
+							<div class="sideMenu">
+								<h3>Replay</h3>
+							</div>
+
+							<ul class="nav nav-tabs" id="myTab">
+								<li class="active"><a href="#home">Map Replay</a></li>
+								<li><a href="#profile">Draw Positions</a></li>
+							</ul>
+							<div class="tab-content">	 
+								<div class="tab-pane active" id="home">
+									<div class="replayControls">
+										<span class="fa-play fa selected"></span>
+										<span class="fa-pause fa"></span>
+										<span class="fa-backward fa"></span>
+										<span class="fa-forward fa"></span>
+										<span class="fa-stop fa"></span>
+										<span class="fa-eject fa"></span>
+									</div>
+									
+									<form class="form-horizontal" role="form">
+										<div class="form-group">
+											<label for="inputEmail3" class="col-sm-3 control-label">Date/Time From<span class="rq">*</span></label>
+					   					<div class="col-sm-9">
+												<div class="input-group date form_datetime" data-date="2014-01-01T00:00:00Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+								          <input class="form-control" size="16" type="text" value="" readonly>
+								          <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+													<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+								        </div>
+												<input type="hidden" id="dtp_input1" value="" /><br/>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="inputEmail3" class="col-sm-3 control-label">Date/Time To<span class="rq">*</span></label>
+											<div class="col-sm-9">
+												<div class="input-group date form_datetime" data-date="2014-01-01T00:00:00Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+								          <input class="form-control" size="16" type="text" value="" readonly>
+								          <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+													<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+								        </div>
+												<input type="hidden" id="dtp_input1" value="" /><br/>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="inputPtelephone" class="col-sm-3 control-label">Select Vehicles<span class="rq">*</span></label>
+											<div class="col-sm-9">
+												<select class="multiselect" multiple="multiple">
+												  <optgroup label="New Server">
+														<option value="356188030388105">356188030388105</option>
+														<option value="868487002037976">868487002037976</option>
+														<option value="GV-500-ONE">GV-500-ONE</option>
+														<option value="GV-500-TRIAL-JT">GV-500-TRIAL-JT</option>
+														<option value="JEFF">JEFF</option>
+														<option value="MARCUS-TEST">MARCUS-TEST</option>
+														<option value="MX59UAD">MX59UAD</option>
+														<option value="PE11YMO">PE11YMO</option>
+														<option value="SCIROCCO">SCIROCCO</option>
+													</optgroup>
+													<optgroup label="Old Server">
+														<option value="SA12OZK">SA12OZK</option>
+													</optgroup>
+												</select>
+											</div>
+										</div>
+				 						<div class="form-group">
+											<div class="col-sm-offset-3 col-sm-9">
+												<button type="submit" class="btn btn-default btn-green">Generate</button>
+											</div>
+										</div>
+										<div style="clear:both"></div>
+								  </form>
+								</div>
+								<div class="tab-pane" id="profile">
+									<form class="form-horizontal" role="form">
+										<div class="form-group">
+											<label for="inputEmail3" class="col-sm-3 control-label">Date/Time From<span class="rq">*</span></label>
+					   						<div class="col-sm-9">
+													<div class="input-group date form_datetime" data-date="2014-01-01T00:00:00Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+								            <input class="form-control" size="16" type="text" value="" readonly>
+								            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+														<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+								          </div>
+													<input type="hidden" id="dtp_input1" value="" /><br/>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="inputEmail3" class="col-sm-3 control-label">Date/Time To<span class="rq">*</span></label>
+												<div class="col-sm-9">
+													<div class="input-group date form_datetime" data-date="2014-01-01T00:00:00Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+								            <input class="form-control" size="16" type="text" value="" readonly>
+								            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+														<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+								          </div>
+												<input type="hidden" id="dtp_input1" value="" /><br/>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="inputPtelephone" class="col-sm-3 control-label">Select Vehicles<span class="rq">*</span></label>
+												<div class="col-sm-9">
+												  <select class="multiselect" multiple="multiple">
+												    <optgroup label="New Server">
+															<option value="356188030388105">356188030388105</option>
+															<option value="868487002037976">868487002037976</option>
+															<option value="GV-500-ONE">GV-500-ONE</option>
+															<option value="GV-500-TRIAL-JT">GV-500-TRIAL-JT</option>
+															<option value="JEFF">JEFF</option>
+															<option value="MARCUS-TEST">MARCUS-TEST</option>
+															<option value="MX59UAD">MX59UAD</option>
+															<option value="PE11YMO">PE11YMO</option>
+															<option value="SCIROCCO">SCIROCCO</option>
+														</optgroup>
+														<optgroup label="Old Server">
+															<option value="SA12OZK">SA12OZK</option>
+														</optgroup>
+													</select>
+												</div>
+										</div>
+				 						<div class="form-group">
+											<div class="col-sm-offset-3 col-sm-9">
+												<button type="submit" class="btn btn-default btn-green">Generate</button>
+											</div>
+										</div>
+										<div style="clear:both"></div>
+									</form>
+								</div>
+						</div>
+					</div>
+				<div id="settingsBox" class="sideContainer">
+					<ul class="nav nav-tabs" id="settingsTabs">
+						<li class="active"><a href="#SettingsTab">Account Settings</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							Alerts
+							<b class="caret"></b>
+							</a>
+								<ul class="dropdown-menu">
+									<li class="">
+									<a data-toggle="tab" href="#CenterTab">Alert Center</a>
+									</li>
+									<li class="">
+									<a data-toggle="tab" href="#RecipientTab">Alert Recipient</a>
+									</li>
+								</ul>
+						</li>
+						<li><a href="#UsersTab">Users</a></li>
+						<li><a href="#VehiclesTab">Vehicles</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							Drivers
+							<b class="caret"></b>
+							</a>
+								<ul class="dropdown-menu">
+									<li class="">
+									<a data-toggle="tab" href="#DriversTab">Drivers</a>
+									</li>
+									<li class="">
+									<a data-toggle="tab" href="#DriverFobs">Driver Fobs</a>
+									</li>
+								</ul>
+						</li>
+						<li><a href="#JobsTab">Jobs</a></li>
+					</ul>
+					<div class="tab-content">	 
+						<div class="tab-pane active" id="SettingsTab">
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
 									<label for="inputEmail3" class="col-sm-3 control-label">Email<span class="rq">*</span></label>
@@ -157,52 +308,52 @@
 									    </div>
 									  </div>
 									  <div class="form-group">
-									    <label for="inputEmail3" class="col-sm-3 control-label">Secondary Phone<span class="rq">*</span></label>
+									    <label for="inputStelephone" class="col-sm-3 control-label">Secondary Phone<span class="rq">*</span></label>
 									    <div class="col-sm-9">
-									      <input type="email" class="form-control" id="inputEmail3" placeholder="Secondary Telephone">
+									      <input type="email" class="form-control" id="inputStelephone" placeholder="Secondary Telephone">
 									      <p class="help-block">Numerical</p>
 									    </div>
 									  </div>
 									  <div class="form-group">
-									    <label for="inputPtelephone" class="col-sm-3 control-label">Building No / Name<span class="rq">*</span></label>
+									    <label for="buildingNo" class="col-sm-3 control-label">Building No / Name<span class="rq">*</span></label>
 									    <div class="col-sm-9">
-									      <input type="password" class="form-control" id="inputPtelephone" placeholder="Building Number / Name">
+									      <input type="password" class="form-control" id="buildingNo" placeholder="Building Number / Name">
 									    </div>
 									  </div>
 									  <div class="form-group">
-									    <label for="inputEmail3" class="col-sm-3 control-label">Street</label>
+									    <label for="street" class="col-sm-3 control-label">Street</label>
 									    <div class="col-sm-9">
-									      <input type="email" class="form-control" id="inputEmail3" placeholder="Street">
+									      <input type="email" class="form-control" id="street" placeholder="Street">
 									    </div>
 									  </div>
 									  <div class="form-group">
-									    <label for="inputPtelephone" class="col-sm-3 control-label">Town / City</label>
+									    <label for="townCity" class="col-sm-3 control-label">Town / City</label>
 									    <div class="col-sm-9">
-									      <input type="password" class="form-control" id="inputPtelephone" placeholder="Town / City">
+									      <input type="password" class="form-control" id="townCity" placeholder="Town / City">
 									    </div>
 									  </div>
 									  <div class="form-group">
-									    <label for="inputEmail3" class="col-sm-3 control-label">County</label>
+									    <label for="county" class="col-sm-3 control-label">County</label>
 									    <div class="col-sm-9">
-									      <input type="email" class="form-control" id="inputEmail3" placeholder="County">
+									      <input type="email" class="form-control" id="county" placeholder="County">
 									    </div>
 									  </div>
 									  <div class="form-group">
-									    <label for="inputPtelephone" class="col-sm-3 control-label">Postcode</label>
+									    <label for="postcode" class="col-sm-3 control-label">Postcode</label>
 									    <div class="col-sm-9">
-									      <input type="password" class="form-control" id="inputPtelephone" placeholder="Postcode">
+									      <input type="password" class="form-control" id="postcode" placeholder="Postcode">
 									    </div>
 									  </div>
 									  <div class="form-group">
-									    <label for="inputEmail3" class="col-sm-3 control-label">Country</label>
+									    <label for="country" class="col-sm-3 control-label">Country</label>
 									    <div class="col-sm-9">
-									      <input type="email" class="form-control" id="inputEmail3" placeholder="Country">
+									      <input type="email" class="form-control" id="country" placeholder="Country">
 									    </div>
 									  </div>
 									  <div class="form-group">
-									    <label for="inputPtelephone" class="col-sm-3 control-label">Timezone Area<span class="rq">*</span></label>
+									    <label for="timezone" class="col-sm-3 control-label">Timezone Area<span class="rq">*</span></label>
 									    <div class="col-sm-9">
-									      <select class="multiselect" multiple="multiple">
+									      <select class="multiselect" id="timezone" multiple="multiple">
 									      	<optgroup label="Mathematics">
 														<option value="africa"> Africa </option>
 														<option value="america"> America </option>
@@ -216,9 +367,9 @@
 									    </div>
 									  </div>
 										<div class="form-group">
-									    <label for="inputPtelephone" class="col-sm-3 control-label">Account Timezone</label>
+									    <label for="aTimezone" class="col-sm-3 control-label">Account Timezone</label>
 									    <div class="col-sm-9">
-									      <select class="form-control">
+									      <select class="form-control" id="aTimezone">
             							<option value=""></option>
 													<option value="59">UTC-04:00 Bermuda</option>
 													<option value="151">UTC-03:00 Stanley</option>
@@ -237,73 +388,31 @@
 													<option value="325">UTC+00:00 St Helena</option>
 													<option value="272">UTC+01:00 Amsterdam</option>
 													<option value="1">UTC+01:00 Andorra</option>
-													<option value="301">UTC+01:00 Belgrade</option>
-													<option value="133">UTC+01:00 Berlin</option>
-													<option value="328">UTC+01:00 Bratislava</option>
-													<option value="52">UTC+01:00 Brussels</option>
-													<option value="183">UTC+01:00 Budapest</option>
-													<option value="135">UTC+01:00 Copenhagen</option>
-													<option value="164">UTC+01:00 Gibraltar</option>
-													<option value="326">UTC+01:00 Ljubljana</option>
-													<option value="226">UTC+01:00 Luxembourg</option>
-													<option value="145">UTC+01:00 Madrid</option>
-													<option value="248">UTC+01:00 Malta</option>
-													<option value="230">UTC+01:00 Monaco</option>
-													<option value="273">UTC+01:00 Oslo</option>
-													<option value="156">UTC+01:00 Paris</option>
-													<option value="232">UTC+01:00 Podgorica</option>
-													<option value="132">UTC+01:00 Prague</option>
-													<option value="196">UTC+01:00 Rome</option>
-													<option value="330">UTC+01:00 San Marino</option>
-													<option value="49">UTC+01:00 Sarajevo</option>
-													<option value="237">UTC+01:00 Skopje</option>
-													<option value="323">UTC+01:00 Stockholm</option>
-													<option value="6">UTC+01:00 Tirane</option>
-													<option value="221">UTC+01:00 Vaduz</option>
-													<option value="392">UTC+01:00 Vatican</option>
-													<option value="33">UTC+01:00 Vienna</option>
-													<option value="288">UTC+01:00 Warsaw</option>
-													<option value="181">UTC+01:00 Zagreb</option>
-													<option value="115">UTC+01:00 Zurich</option>
-													<option value="173">UTC+02:00 Athens</option>
-													<option value="300">UTC+02:00 Bucharest</option>
-													<option value="231">UTC+02:00 Chisinau</option>
-													<option value="149">UTC+02:00 Helsinki</option>
-													<option value="349">UTC+02:00 Istanbul</option>
-													<option value="354">UTC+02:00 Kiev</option>
-													<option value="47">UTC+02:00 Mariehamn</option>
-													<option value="227">UTC+02:00 Riga</option>
-													<option value="54">UTC+02:00 Sofia</option>
-													<option value="141">UTC+02:00 Tallinn</option>
-													<option value="225">UTC+02:00 Vilnius</option>
-													<option value="302">UTC+03:00 Kaliningrad</option>
-													<option value="81">UTC+03:00 Minsk</option>
-													<option value="303">UTC+04:00 Moscow</option>
 												</select>
 									    </div>
 									  </div>
 										<div class="form-group">
-									    <label for="inputPtelephone" class="col-sm-3 control-label">Alert / Sidebar Time</label>
+									    <label for="sidebarTime" class="col-sm-3 control-label">Alert / Sidebar Time</label>
 									    <div class="col-sm-9">
-									      <select class="form-control">
+									      <select class="form-control" id="sidebarTime">
 													<option value="false">Vehicle's Timezone</option>
 													<option selected="selected" value="true">Account's Timezone</option>
 												</select>
 									    </div>
 									  </div>
 									  <div class="form-group">
-									    <label for="inputPtelephone" class="col-sm-3 control-label">Business Hours</label>
+									    <label for="businessHours" class="col-sm-3 control-label">Business Hours</label>
 									    <div class="col-sm-9">
-									      <select class="form-control">
+									      <select class="form-control" id="businessHours">
 													<option value="false">Vehicle's Timezone</option>
 													<option selected="selected" value="true">Account's Timezone</option>
 												</select>
 									    </div>
 									  </div>
 									  <div class="form-group">
-									    <label for="inputPtelephone" class="col-sm-3 control-label">Report Time </label>
+									    <label for="reportTime" class="col-sm-3 control-label">Report Time </label>
 									    <div class="col-sm-9">
-									      <select class="form-control">
+									      <select class="form-control" id="reportTime">
 													<option value="false">Vehicle's Timezone</option>
 													<option selected="selected" value="true">Account's Timezone</option>
 												</select>
@@ -316,131 +425,130 @@
 									  </div>
 									  <div style="clear:both"></div>
 								</form>
-								</div>
-								<div id="tab2" class="tabBox">
+						</div>
+						<div class="tab-pane" id="CenterTab">
 									<div id="tab2nav" class="formNav">
-										<a href="#" id="viewAlert" class="viewAlert active tabButton"><span class="fa fa-bars"></span>View<span class="arrow-down"></span></a>
-										<a href="#" id="addAlert" class="addAlert tabButton"><span class="fa fa-plus"></span>Add<span class="arrow-down"></span></a>
+										<a href="#" id="viewAlert" class="viewAlert tabButton"><span class="fa fa-bars"></span>View<span class="arrow-down"></span></a>
+										<a href="#" id="addAlert" class="addAlert activeTab tabButton"><span class="fa fa-plus"></span>Add<span class="arrow-down"></span></a>
 										<div style="clear:both;"></div>
-									<div class="formBox active" id="viewAlert">
+									<div class="formBox" id="viewAlert">
 											View Alert
 											<div id="example-1-result"></div>
 									</div>
-									<div class="formBox" id="addAlert">
+									<div class="formBox activeTab" id="addAlert">
 									<form class="form-horizontal" role="form">
 										<div class="form-group">
-											<label for="inputEmail3" class="col-sm-3 control-label">Name:<span class="rq">*</span></label>
-											   <div class="col-sm-9">
-											      <input type="email" class="form-control" id="inputEmail3" placeholder="Name" autofocus>
-											      <p class="help-block">Enter a name for this alert.</p>
-											   </div>
-
+											<label for="name" class="col-sm-3 control-label">Name:<span class="rq">*</span></label>
+											<div class="col-sm-9">
+											   <input type="email" class="form-control" id="name" placeholder="Name" autofocus>
+											   <p class="help-block">Enter a name for this alert.</p>
 											</div>
+										</div>
+										<div class="form-group">
+											  <label for="crossDepot" class="col-sm-3 control-label"> Cross Depot:</label>
+											  <div class="col-sm-9 checkContainer">
+												  <input id="crossDepot" type="checkbox">
+												</div>
+										</div>
+										<h3>Alert Options</h3>
+										<p class="info">The options below determine the circumstances that cause a vehicle to trigger an alert. </p>
+										<div class="form-group">
+											<label for="alertTrigger" class="col-sm-3 control-label">Alert Trigger:<span class="rq">*</span></label>
+											<div class="col-sm-9">
+											  <select class="multiselect" id="alertTrigger" multiple="multiple">
+											    <optgroup label="Out of Hours">
+														<option value="IgnitionOn">Ignition On</option>
+														<option value="IgnitionOff">Ignition Off</option>
+													</optgroup>
+													<optgroup label="Behaviour">
+														<option value="idle"> Idle </option>
+														<option value="overspeed"> Overspeed </option>
+													</optgroup>
+													<optgroup label="Inputs">
+														<option value="High"> High </option>
+														<option value="Low"> Low </option>
+													</optgroup>
+													<optgroup label="Low Battery">
+														<option value="High"> Under 10% </option>
+														<option value="Low"> Under 5%</option>
+													</optgroup>
+													<optgroup label="Point of Interests">
+														<option value="Enters"> Enters</option>
+														<option value="Leaves"> Leaves</option>
+													</optgroup>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="alerts" class="col-sm-3 control-label">Alerts:<span class="rq">*</span></label>
+											<div class="col-sm-9">
+											  <select class="multiselect" id="alerts" multiple="multiple">
+											    <optgroup label="Business Hours">
+														<option value="africa"> Inside </option>
+														<option value="america"> Outside </option>
+													</optgroup>
+													<optgroup label="Privacy Switch">
+														<option value="Active"> Active </option>
+														<option value="Inactive"> Inactive </option>
+													</optgroup>
+												</select>
+											</div>
+										</div>
+										<h3>Vehicles</h3>
+										<p class="info">Please select the vehicles that should be monitored. </p>
+										<div class="form-group">
+											<label for="vehiclesSelect" class="col-sm-3 control-label">Vehicles:<span class="rq">*</span></label>
+											<div class="col-sm-9">
+											  <select class="multiselect" id="vehiclesSelect" multiple="multiple">
+											  	<optgroup label="New Server">
+														<option value="356188030388105">356188030388105</option>
+														<option value="868487002037976">868487002037976</option>
+														<option value="GV-500-ONE">GV-500-ONE</option>
+														<option value="GV-500-TRIAL-JT">GV-500-TRIAL-JT</option>
+														<option value="JEFF">JEFF</option>
+														<option value="MARCUS-TEST">MARCUS-TEST</option>
+														<option value="MX59UAD">MX59UAD</option>
+														<option value="PE11YMO">PE11YMO</option>
+														<option value="SCIROCCO">SCIROCCO</option>
+													</optgroup>
+													<optgroup label="Old Server">
+														<option value="SA12OZK">SA12OZK</option>
+													</optgroup>
+												</select>
+											</div>
+										</div>
+										<h3>Inputs</h3>
+										<p class="info">Please select the inputs that should be monitored.<br />
+										<strong>Note:</strong> Many of these inputs are for specialised vehicles. If would you would like more information on the types of input available for your vehicles, please contact support. </p>
+										<div class="form-group">
+											<label for="digitalInput" class="col-sm-3 control-label">Digital Input:<span class="rq">*</span></label>
+											<div class="col-sm-9">
+											  <select class="multiselect" id="digitalInput" multiple="multiple">
+													<option value="PTOstatus">PTO status</option>
+													<option value="PanicButton">Panic Button</option>
+													<option value="External Power">External Power</option>
+													<option value="PrivacySwitch">Privacy Switch</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="analoginput" class="col-sm-3 control-label">Analog Input:<span class="rq">*</span></label>
+											<div class="col-sm-9">
+											  <input type="password" class="form-control" id="analoginput" placeholder="Analog Input">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="inputPtelephone2" class="col-sm-3 control-label">Primary Phone:<span class="rq">*</span></label>
+											<div class="col-sm-9">
+											  <input type="password" class="form-control" id="inputPtelephone2" placeholder="Primary telephone">
+											</div>
+										</div>
+										<h3>Point of Interest</h3>
+										<p class="info">Please select any Points of Interest that should be monitored. </p>
 											<div class="form-group">
-											    <label class="col-sm-3 control-label"> Cross Depot:</label>
-											    <div class="col-sm-9 checkContainer">
-												    <input type="checkbox">
-												  </div>
-											  </div>
-											  <h3>Alert Options</h3>
-											  <p class="info">The options below determine the circumstances that cause a vehicle to trigger an alert. </p>
-											  <div class="form-group">
-											    <label for="inputPtelephone" class="col-sm-3 control-label">Alert Trigger:<span class="rq">*</span></label>
-											    <div class="col-sm-9">
-											      <select class="multiselect" multiple="multiple">
-											      	<optgroup label="Out of Hours">
-																<option value="IgnitionOn">Ignition On</option>
-																<option value="IgnitionOff">Ignition Off</option>
-															</optgroup>
-															<optgroup label="Behaviour">
-																<option value="idle"> Idle </option>
-																<option value="overspeed"> Overspeed </option>
-															</optgroup>
-															<optgroup label="Inputs">
-																<option value="High"> High </option>
-																<option value="Low"> Low </option>
-															</optgroup>
-															<optgroup label="Low Battery">
-																<option value="High"> Under 10% </option>
-																<option value="Low"> Under 5%</option>
-															</optgroup>
-															<optgroup label="Point of Interests">
-																<option value="Enters"> Enters</option>
-																<option value="Leaves"> Leaves</option>
-															</optgroup>
-														</select>
-											    </div>
-											  </div>
-											  <div class="form-group">
-											    <label for="inputPtelephone" class="col-sm-3 control-label">Alerts:<span class="rq">*</span></label>
-											    <div class="col-sm-9">
-											      <select class="multiselect" multiple="multiple">
-											      	<optgroup label="Business Hours">
-																<option value="africa"> Inside </option>
-																<option value="america"> Outside </option>
-															</optgroup>
-															<optgroup label="Privacy Switch">
-																<option value="Active"> Active </option>
-																<option value="Inactive"> Inactive </option>
-															</optgroup>
-														</select>
-											    </div>
-											  </div>
-											  <h3>Vehicles</h3>
-											  <p class="info">Please select the vehicles that should be monitored. </p>
-											  <div class="form-group">
-											    <label for="inputPtelephone" class="col-sm-3 control-label">Vehicles:<span class="rq">*</span></label>
-											    <div class="col-sm-9">
-											      <select class="multiselect" multiple="multiple">
-											      	<optgroup label="New Server">
-																<option value="356188030388105">356188030388105</option>
-																<option value="868487002037976">868487002037976</option>
-																<option value="GV-500-ONE">GV-500-ONE</option>
-																<option value="GV-500-TRIAL-JT">GV-500-TRIAL-JT</option>
-																<option value="JEFF">JEFF</option>
-																<option value="MARCUS-TEST">MARCUS-TEST</option>
-																<option value="MX59UAD">MX59UAD</option>
-																<option value="PE11YMO">PE11YMO</option>
-																<option value="SCIROCCO">SCIROCCO</option>
-															</optgroup>
-															<optgroup label="Old Server">
-																<option value="SA12OZK">SA12OZK</option>
-															</optgroup>
-														</select>
-											    </div>
-											  </div>
-											  <h3>Inputs</h3>
-											  <p class="info">Please select the inputs that should be monitored.<br />
-											  <strong>Note:</strong> Many of these inputs are for specialised vehicles. If would you would like more information on the types of input available for your vehicles, please contact support. </p>
-											  <div class="form-group">
-											    <label for="inputPtelephone" class="col-sm-3 control-label">Digital Input:<span class="rq">*</span></label>
-											    <div class="col-sm-9">
-											      <select class="multiselect" multiple="multiple">
-															<option value="PTOstatus">PTO status</option>
-															<option value="PanicButton">Panic Button</option>
-															<option value="External Power">External Power</option>
-															<option value="PrivacySwitch">Privacy Switch</option>
-														</select>
-											    </div>
-											  </div>
-											  <div class="form-group">
-											    <label for="inputPtelephone" class="col-sm-3 control-label">Analog Input:<span class="rq">*</span></label>
-											    <div class="col-sm-9">
-											      <input type="password" class="form-control" id="inputPtelephone" placeholder="Primary telephone">
-											    </div>
-											  </div>
-											  <div class="form-group">
-											    <label for="inputPtelephone" class="col-sm-3 control-label">Primary Phone:<span class="rq">*</span></label>
-											    <div class="col-sm-9">
-											      <input type="password" class="form-control" id="inputPtelephone" placeholder="Primary telephone">
-											    </div>
-											  </div>
-											  <h3>Point of Interest</h3>
-											  <p class="info">Please select any Points of Interest that should be monitored. </p>
-											  <div class="form-group">
-											    <label for="inputPtelephone" class="col-sm-3 control-label">Points of Interest:<span class="rq">*</span></label>
-											    <div class="col-sm-9">
-											      <select class="multiselect" multiple="multiple">
+											  <label for="pointsInterest" class="col-sm-3 control-label">Points of Interest:<span class="rq">*</span></label>
+											  <div class="col-sm-9">
+											      <select class="multiselect" id="pointsInterest" multiple="multiple">
 											      	<optgroup label="Customer/site">
 																<option value="B. Easi Services Limited">B. Easi Services Limited</option>
 																<option value="Danoli Solutions">Danoli Solutions</option>
@@ -474,9 +582,9 @@
 											  <h3>Recipients</h3>
 											  <p class="info">Finally, please select the recipients that you wish to receive this alert. </p>
 											  <div class="form-group">
-											    <label for="inputPtelephone" class="col-sm-3 control-label">Timezone Area:<span class="rq">*</span></label>
+											    <label for="timezoneArea2" class="col-sm-3 control-label">Timezone Area:<span class="rq">*</span></label>
 											    <div class="col-sm-9">
-											      <select class="multiselect" multiple="multiple">
+											      <select class="multiselect" id="timezoneArea2" multiple="multiple">
 											      	<optgroup label="Mathematics">
 																<option value="africa"> Africa </option>
 																<option value="america"> America </option>
@@ -499,19 +607,19 @@
 										</form>
 									</div>
 									</div>
-								</div>
-								<div id="tab3" class="tabBox">
+						</div>
+						<div class="tab-pane" id="RecipientTab">
 									<div id="tab3nav" class="formNav">
-										<a href="#" id="viewRecipient" class="viewAlert active tabButton"><span class="fa fa-bars"></span>View<span class="arrow-down"></span></a>
-										<a href="#" id="addRecipient" class="addAlert tabButton"><span class="fa fa-plus"></span>Add<span class="arrow-down"></span></a>
+										<a href="#" id="viewRecipient" class="viewAlert tabButton"><span class="fa fa-bars"></span>View<span class="arrow-down"></span></a>
+										<a href="#" id="addRecipient" class="addAlert tabButton activeTab"><span class="fa fa-plus"></span>Add<span class="arrow-down"></span></a>
 										<div style="clear:both;"></div>
 									
-									<div class="formBox" id="addRecipient">
+									<div class="formBox activeTab" id="addRecipient">
 									<form class="form-horizontal" role="form">
 											<div class="form-group">
-											    <label for="inputPtelephone" class="col-sm-3 control-label">Type:<span class="rq">*</span></label>
+											    <label for="typeBox" class="col-sm-3 control-label">Type:<span class="rq">*</span></label>
 											    <div class="col-sm-9">
-								      <select class="multiselect" multiple="multiple">
+								      <select class="multiselect" id="typeBox" multiple="multiple">
 																<option value="email"> Email </option>
 																<option value="sms"> SMS </option>
 																<option value="user"> User </option>
@@ -520,21 +628,21 @@
 											  </div>
 										<div class="form-group">
 
-											<label for="inputEmail3" class="col-sm-3 control-label">Name:<span class="rq">*</span></label>
+											<label for="name3" class="col-sm-3 control-label">Name:<span class="rq">*</span></label>
 											   <div class="col-sm-9">
-											      <input type="email" class="form-control" id="inputEmail3" placeholder="Name" autofocus>
+											      <input type="email" class="form-control" id="name3" placeholder="Name" autofocus>
 											   </div>
 											</div>
 											<div class="form-group">
-												<label for="inputEmail3" class="col-sm-3 control-label">Recipient:<span class="rq">*</span></label>
+												<label for="recipient3" class="col-sm-3 control-label">Recipient:<span class="rq">*</span></label>
 											   <div class="col-sm-9">
-											      <input type="email" class="form-control" id="inputEmail3" placeholder="Recipient" autofocus>
+											      <input type="email" class="form-control" id="recipient3" placeholder="Recipient" autofocus>
 											   </div>
 											</div>
 											<div class="form-group">
-											    <label class="col-sm-3 control-label"> Cross Depot:</label>
+											    <label for="crossDepot2" class="col-sm-3 control-label"> Cross Depot:</label>
 											    <div class="col-sm-9 checkContainer">
-												    <input type="checkbox">
+												    <input id="crossDepot2" type="checkbox">
 												  </div>
 											  </div>
 											  <div style="clear:both"></div>
@@ -546,21 +654,20 @@
 											  <div style="clear:both"></div>
 										</form>
 									</div> 
-									<div class="formBox active" id="viewRecipient">
+									<div class="formBox" id="viewRecipient">
 											View Alert
 									</div>
 									</div>
-								</div>
-								<div id="tab4" class="tabBox">
-
-								</div>
-								<div id="tab5" class="tabBox">
+						</div>
+						<div class="tab-pane" id="UsersTab">
+								Users
+						</div>
+						<div class="tab-pane" id="VehiclesTab">
 									<div id="tab4nav" class="formNav">
-										<a href="#" id="viewRecipient" class="viewAlert active tabButton"><span class="fa fa-bars"></span>View<span class="arrow-down"></span></a>
-										<a href="#" id="addRecipient" class="addAlert tabButton"><span class="fa fa-plus"></span>Update<span class="arrow-down"></span></a>
-										<div style="clear:both;"></div>
-									
-									<div class="formBox" id="addRecipient">
+									<a href="#" id="viewRecipient" class="viewAlert tabButton"><span class="fa fa-bars"></span>View<span class="arrow-down"></span></a>
+									<a href="#" id="addRecipient" class="addAlert tabButton activeTab"><span class="fa fa-plus"></span>Update<span class="arrow-down"></span></a>
+									<div style="clear:both;"></div>
+									<div class="formBox activeTab" id="addRecipient">
 									<form class="form-horizontal" role="form">
 										<h3>Select Vehicles to Edit</h3>
 											<div class="form-group">
@@ -682,47 +789,38 @@
 											  <div style="clear:both"></div>
 										</form>
 									</div> 
-									<div class="formBox active" id="viewRecipient">
+									<div class="formBox" id="viewRecipient">
 											View Alert
 									</div>
 									</div>
-								</div>
-								<div id="tab6" class="tabBox">Tab6</div>
-								<div id="tab7" class="tabBox">Tab6</div>
-							</div>
+						</div>
+						<div class="tab-pane" id="DriversTab">
+							6
+						</div>
+						<div class="tab-pane" id="DriverFobs">
+							7
+						</div>
+						<div class="tab-pane" id="JobsTab">
+							8
+						</div>
+					</div>
+	
+					</div>
       	</div>
       	<div id="map-canvas"></div>
 			</div>
 			<!-- /#page-wrapper -->
 		</div>
 		<!-- /#wrapper -->
-<!--<script type="text/javascript">
 
-for(var i = 0; i < 30; i++ ) {
-var vehice1 = new VehicleModel({
-			title: '12345',
-			location: 'wigan',
-			date: '21/01/14',
-			time: '05:45',
-			status: 'in transit',
-			speed: '53mph'
-});
-
-var vehiceView1 = new VehicleView({
-	model : vehice1
-})
-vehiceView1.render();
-
-$('#vehicles2').append(vehiceView1.el);
-}
-</script> -->
 <script src="js/poi2.js"></script>
 <script src="js/app.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('.multiselect').multiselect({
-			enableFiltering: true
+			enableFiltering: false,
+			maxHeight: 200
 		});
 	});
 
@@ -743,20 +841,33 @@ $('#vehicles2').append(vehiceView1.el);
 	});
 </script>
 
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+
 <script type="text/javascript">
-$('#example40').multiselect({
-onChange: function(option, checked) {
-var values = [];
-$('#example40 option').each(function() {
-if ($(this).val() !== option.val()) {
-values.push($(this).val());
-}
+	$('.form_datetime').datetimepicker({
+	    //language:  'fr',
+	    weekStart: 1,
+	    todayBtn:  1,
+			autoclose: 1,
+			todayHighlight: 1,
+			startView: 2,
+			forceParse: 0,
+	    showMeridian: 1
+	});
+</script>
+
+<script>
+$('#myTab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
 });
-$('#example40').multiselect('deselect', values);
-}
+
+$('#settingsTabs a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
 });
 </script>
- 
- <script src="js/backgridTest.js"></script>
-		</body>
+
+  <script src="js/backgridTest.js"></script>
+ </body>
 </html>
