@@ -2,7 +2,7 @@
 #logo, #logoNav {border-right:5px solid #fff;text-align:center;padding:16px 0 0;background:#d03233;display:none;display:none;width:205px;left:0;position:absolute;height:100%;}
 #logo img, #logoNav img {width:180px;}
 #logoNav {display:block;top:0;width:245px;height:54px;text-align:left;padding-left:10px;border-bottom:4px solid #fff;background:#000;}
-#Moblogo {position:absolute;top:8px;left:90px;}
+#Moblogo {position:absolute;top:8px;left:90px;display:none;}
 .Moblogo {width:35px;}
 .navbar-static-side #logoNav {display:none;}
 

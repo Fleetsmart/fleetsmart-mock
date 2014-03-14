@@ -80,7 +80,7 @@ div.activeTab {display:block;}
 #type-selector label {font-family: Roboto;font-size: 13px;font-weight: 300;}
 
 /* TABS */ 
-.dropdown-menu {width: 210px!important;}
+.nav-tabs .dropdown-menu {width: 210px!important;}
 .replayControls {text-align: center; padding: 10px 0 20px; border-bottom: 1px solid #eee;margin-bottom:20px;}
 .replayControls span {background:#eee; border-radius: 5px; padding: 10px 15px; margin:5px;}
 .replayControls span:hover {background:#ccc;}
