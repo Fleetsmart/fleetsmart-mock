@@ -1,0 +1,128 @@
+
+<html>
+<head>
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/underscore.js"></script>
+	<script src="js/backbone.js"></script>
+	<script src="js/backgrid.js"></script>
+	<script src="http://momentjs.com/downloads/moment-with-langs.js"></script>
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+	<style>
+.backgrid {width:100%;}
+.backgrid-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  /* you may want to adjust this to fit a whole page */
+  height: 494px;
+  padding: 0;
+  overflow: auto;
+  border: 0;
+}
+.backgrid th {
+  background: #ccc;
+}
+
+.backgrid th a {color:#333; font-weight:normal; display:block; padding: 10px;}
+
+.backgrid tbody tr:nth-child(even) {
+  background-color: #eee;
+}
+
+.backgrid tbody tr td {padding:10px;color:#999;font-size:12px;}
+
+	</style>
+		
+</head>
+
+<body>
+<input class="search round_all" id="searchTask" type="text" value="">
+<div id="listEventualidades" class="backgrid-container"></div>
+
+
+<script type="text/javascript">
+	var Eventualidad = Backbone.Model.extend({});
+var Eventualidades = Backbone.PageableCollection.extend({
+mode: "client", 
+state: {
+firstPage: 0,
+currentPage: 0,
+totalRecords: 20,
+pageSize: 10,
+sortKey: "updated",
+order: 1
+},
+model: Eventualidad,
+url: "Eventualidades/listaDeEventualidades"
+});
+collectionEventualidades = new Eventualidades();
+var columnsEventualidad = [
+{
+name: "docente",
+label: "Docente",
+cell: "selectDocentes",
+editable: true
+},
+{
+name: "tipoEventualidad",
+label: "Eventualidad",
+cell: "string",
+editable: false
+},  
+{
+name: "fechaDeEventualidad",
+label: "Fecha de Eventualidad",
+cell: shortDate,
+editable: false
+},  
+{
+name: "horaInicio",
+label: "Inicia",
+cell: time,
+editable: false
+},
+{
+name: "horaFin",
+label: "Finaliza",
+cell: time,
+editable: false
+},
+{
+name: "observaciones",
+label: "Observaciones",
+cell: "string",
+editable: false
+}
+]
+var gridEventualidad = new Backgrid.Grid({
+columns: columnsEventualidad,
+collection: collectionEventualidades
+});
+var paginator = new Backgrid.Extension.Paginator({
+collection: collectionEventualidades
+});
+var filter = new Backgrid.Extension.ClientSideFilter({
+collection: collectionEventualidades,
+fields: [
+'docente',
+'tipoEventualidad',
+'fechaDeEventualidad',
+'horaInicio',
+'horaFin',
+'observaciones'
+]
+});
+$("#listEventualidades").prepend(filter.render().$el);
+$("#listEventualidades").append(gridEventualidad.render().$el);
+collectionEventualidades.fetch({
+reset: true
+});
+$("#listEventualidades").append(paginator.render().$el); 
+
+</script>
+
+
+
+</body>
+</html>

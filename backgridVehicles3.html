@@ -1,0 +1,225 @@
+
+<html>
+<head>
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/underscore.js"></script>
+	<script src="js/backbone.js"></script>
+	<script src="js/backgrid.js"></script>
+	<script src="http://momentjs.com/downloads/moment-with-langs.js"></script>
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+	<style>
+.backgrid {width:100%;}
+.backgrid-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  /* you may want to adjust this to fit a whole page */
+  height: 494px;
+  padding: 0;
+  overflow: auto;
+  border: 0;
+}
+.backgrid th {
+  background: #ccc;
+}
+
+.backgrid th a {color:#333; font-weight:normal; display:block; padding: 10px;}
+
+.backgrid tbody tr:nth-child(even) {
+  background-color: #eee;
+}
+
+.backgrid tbody tr td {padding:10px;color:#999;font-size:12px;}
+
+	</style>
+		
+</head>
+
+<body>
+<input class="search round_all" id="searchTask" type="text" value="">
+<div id="table" class="backgrid-container"></div>
+
+
+<script type="text/javascript">
+	var columns = [
+    	{
+    		name: "image",
+    		label: "",
+    		cell: "string",
+    		editable: false
+  		},
+    	{
+    		name: "name",
+    		label: "Name",
+    		cell: "string",
+    		editable: false
+  		},
+  		{
+    		name: "vrn",
+    		label: "VRN",
+    		cell: "string"
+  		},
+  		{
+    		name: "group",
+    		label: "Group",
+    		cell: "string"
+  		},
+  		{
+    		name: "driver",
+    		label: "Driver",
+    		cell: "string"
+  		},
+  		{
+    		name: "make",
+    		label: "Make",
+    		cell: "string"
+  		},
+  		{
+    		name: "model",
+    		label: "Model",
+    		cell: "string"
+  		},
+  		{
+    		name: "imei",
+    		label: "IMEI",
+    		cell: "integer"
+  		},
+  		{
+    		name: "tax",
+    		label: "Tax Date",
+    		cell: "date",
+    		formatter: {
+    			fromRaw : function(rawData, model) {
+    				return moment(rawData).format("DD/MM/YYYY")
+    			},
+    			toRaw : function(formattedData, model ) {
+    				return moment(formattedData, "DD/MM/YYYY").toDate();
+    			}
+    		}
+
+  		},
+
+  		{
+    		name: "mot",
+    		label: "MOT Date",
+    		cell: "date",
+    		formatter: {
+    			fromRaw : function(rawData, model) {
+    				return moment(rawData).format("DD/MM/YYYY")
+    			},
+    			toRaw : function(formattedData, model ) {
+    				return moment(formattedData, "DD/MM/YYYY").toDate();
+    			}
+    		}
+
+  		},
+   		{
+    		name: "service",
+    		label: "Service Date",
+    		cell: "date",
+    		formatter: {
+    			fromRaw : function(rawData, model) {
+    				return moment(rawData).format("DD/MM/YYYY")
+    			},
+    			toRaw : function(formattedData, model ) {
+    				return moment(formattedData, "DD/MM/YYYY").toDate();
+    			}
+    		}
+
+  		}
+	];
+
+var Model = Backbone.Model.extend({});
+
+var Collection = Backbone.PageableCollection.extend({
+    model: Model,
+    state: {pageSize: 15},
+    mode: client
+});
+
+var collection = new Collection([{
+    name: "Steve",
+    vrn:  "KM10GYW",
+    make:  "MERCEDES",
+    model: "SPRINTER",
+    imei: 356307044065901,
+},
+{
+    name: "James",
+    vrn: "KN60YPM",
+    make:  "MERCEDES",
+    model: "SPRINTER",
+    imei: 356307044065901,
+},
+{
+    name: "Dan",
+    vrn: "KN60YPM",
+    make:  "MERCEDES",
+    model: "SPRINTER",
+    imei: 356307044065901,
+},
+{
+    name: "Dave",
+    vrn: "KN60YPM",
+    make:  "MERCEDES",
+    model: "SPRINTER",
+    imei: 356307044065901,
+},
+{
+    name: "John",
+    vrn: "KN60YPM",
+    make:  "MERCEDES",
+    model: "SPRINTER",
+    imei: 356307044065901,
+},
+{
+    name: "Mike",
+    vrn: "KN60YPM",
+    make:  "MERCEDES",
+    model: "SPRINTER",
+    imei: 356307044065901,
+},
+{
+    name: "Jennie",
+    vrn: "KN60YPM",
+    make:  "MERCEDES",
+    model: "SPRINTER",
+    imei: 356307044065901,
+},
+{
+    name: "Alice",
+    vrn: "KN60YPM",
+    make:  "MERCEDES",
+    model: "SPRINTER",
+    imei: 356307044065901,
+},
+{
+    name: "Hannah",
+    vrn: "KN60YPM",
+    make:  "MERCEDES",
+    model: "SPRINTER",
+    imei: 356307044065901,
+}])
+
+
+
+var grid = new Backgrid.Grid({
+  columns: columns,
+  collection: collection
+});
+
+
+
+
+
+$("#table").prepend(clientSideFilter.render().el);
+
+
+
+
+
+
+</script>
+</body>
+</html>

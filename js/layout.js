@@ -50,8 +50,6 @@ $(document).ready(function(){
 
 	});
 
-
-
 	$(".hideSide").click(function(){
 		$('#sidebar').animate({marginLeft: '-101%'}, 800);
 		$('#sidebar').addClass("hideBar");
